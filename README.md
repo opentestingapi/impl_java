@@ -2,9 +2,11 @@
 
 Reference implementation to upload test cases, create random data and perform tests cron triggered
 
+
 ## Architecture
 
 ![arch diagram](architecture/e2e-tests.png?raw=true "Architecture")
+
 
 ## Java and Spring Boot?
 
@@ -21,7 +23,21 @@ We would like to make it as easy as possible to extend and to fork the project, 
 * available time definitions: s=second, m=minute, h=hour, d=day
 * Container usage preferred
 
-### Random Data Generator
+
+## Adapters
+
+the following adapters could be used:
+
+| type          | readme  |
+| ------------- | ------- | 
+| cassandra     | [ReadMe](src/main/java/org/opentesting/services/adapter/cassandra/README.md) |
+| kafka         | [ReadMe](src/main/java/org/opentesting/services/adapter/kafka/README.md) |
+| jdbc          | [ReadMe](src/main/java/org/opentesting/services/adapter/jdbc/README.md) |
+| rest/soap     | [ReadMe](src/main/java/org/opentesting/services/adapter/rest/README.md) |
+
+
+## Random Data Generator
+
 * multiple options available, please check list below
 * inherit from existing inject is possible using attribute: inheritfrom
 * result (only JSON!) from checks could be added to random data using attribute: result2random
@@ -71,18 +87,8 @@ options:
 }
 ```
 
-### Adapters
 
-the following adapters could be used:
-
-| type          | readme  |
-| ------------- | ------- | 
-| cassandra     | [ReadMe](src/main/java/org/opentesting/services/adapter/cassandra/README.md) |
-| kafka         | [ReadMe](src/main/java/org/opentesting/services/adapter/kafka/README.md) |
-| jdbc          | [ReadMe](src/main/java/org/opentesting/services/adapter/jdbc/README.md) |
-| rest/soap     | [ReadMe](src/main/java/org/opentesting/services/adapter/rest/README.md) |
-
-### Naming Rules / Storage
+## Naming Rules / Storage
 
 IDs must be unique, please create a guideline for you test case creators.
 
@@ -92,6 +98,7 @@ IDs must be unique, please create a guideline for you test case creators.
 * ...
 
 Please think about using a kind of folder structure to differ between functional cases.
+
 
 ## API Usage
 
@@ -191,7 +198,7 @@ Swagger: http://servername:50000/swagger-ui/#/password-controller/decryptUsingPO
 Local development environment could be started with docker-compose, please check content in folder dev_env.
 
 
-## Build (JDK 11 preinstalled in Visual-Studio-Server)
+### Build (JDK 11 preinstalled in Visual-Studio-Server)
 
 Local build:
 
@@ -218,19 +225,16 @@ Local build and Container creation (you might want to use your own tags and repo
 You should run this tool as a container:
 
 local
-
 ```
 docker run -d -p 50000:50000 --name=opentesting --restart=always robertdiers/opentesting:latest
 ```
-server with 2 GB RAM and 2 cores
 
+server with 2 GB RAM and 2 cores
 ```
 docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" robertdiers/opentesting:latest
 ```
-### Environment Variables
 
-* use external PostGre instead of internal H2 database
-
+use external PostGre instead of internal H2 database
 ```
 sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" \
     -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" \
@@ -241,8 +245,7 @@ sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cp
     robertdiers/opentesting:latest
 ```
 
-* integrate with Sleuth / Zipkin Tracing (default sampling rate 0.0)
-
+integrate with Sleuth / Zipkin Tracing (default sampling rate 0.0)
 ```
 sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" \
     -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" \
@@ -251,7 +254,7 @@ sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cp
     robertdiers/opentesting:latest
 ```
 
-* Parameters (can be used similar to SPRING_DATASOURCE_USERNAME)
+### Parameters (can be used similar to SPRING_DATASOURCE_USERNAME)
 
 |Parameter   |Default   |Description   |
 |---|---|---|
@@ -264,6 +267,7 @@ sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cp
 |OPENTESTING_RELOADTESTCASES   |true   |reload database testcases after container restart   |
 |OPENTESTING_AUTODELETE   |7   |delete checks older than 7 days (targetts)   |
 |OPENTESTING_SALT   |   |instance specific salt for password encryption   |
+
 
 ## Examples
 
