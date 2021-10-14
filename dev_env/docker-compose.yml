@@ -1,0 +1,95 @@
+version: '3.8'
+services:
+
+    vsc-server:
+        build: .
+        container_name: opentesting-vsc-server
+        volumes:
+            - ${HOME}/.config/code-server/config.yaml:/home/coder/.config/code-server/config.yaml
+            - ${HOME}/.m2/repository:/home/coder/.m2/repository
+            - ${HOME}/.m2/settings.bva.xml:/home/coder/.m2/settings.xml
+            - ${PWD}/..:/home/coder/project
+        environment:
+            - DOCKER_USER=$USER
+            - PORT=40000
+        network_mode: host
+        user: "${EXAMPLE_UID}:${EXAMPLE_GID}"
+    
+    cassandra-db:
+        build: cassandra
+        container_name: opentesting-cassandra-db
+        network_mode: host
+        volumes:
+            - ${PWD}/cassandra_scripts:/var/lib/cassandra/initializerscripts
+
+    oracle-db:
+        image: quillbuilduser/oracle-18-xe-micro-sq
+        container_name: opentesting-oracle-db
+        network_mode: host
+        volumes: 
+            - ${PWD}/oracle_scripts:/opt/oracle/product/18c/dbhomeXE/initializerscripts
+
+    zookeeper:
+        image: confluentinc/cp-zookeeper:5.2.1
+        container_name: opentesting-zookeeper
+        network_mode: host
+        volumes:
+            - ${PWD}/kafka_scripts:/var/lib/kafka/initializerscripts
+        environment:
+            - ZOOKEEPER_CLIENT_PORT=2181
+            
+    kafka-broker: 
+        image: confluentinc/cp-kafka:5.2.1
+        container_name: opentesting-kafka-broker
+        depends_on: 
+            - zookeeper
+        network_mode: host
+        environment:
+            - KAFKA_ZOOKEEPER_CONNECT=localhost:2181
+            - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+            - KAFKA_AUTO_CREATE_TOPICS_ENABLE=true
+            - KAFKA_AUTO_DELETE_TOPIC_ENABLE=true
+            - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+            - KAFKA_JMX_PORT=29999
+            - KAFKA_JMX_HOSTNAME=kafka-broker
+            - KAFKA_JMX_OPTS=-Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=kafka-broker -Dcom.sun.management.jmxremote.port=39999 -Dcom.sun.management.jmxremote.rmi.port=39999
+            
+    prometheus:
+        image: prom/prometheus
+        container_name: opentesting-prometheus
+        network_mode: host
+        volumes:
+            - ${PWD}/prometheusconfig:/etc/prometheus
+
+    grafana:
+        image: grafana/grafana
+        container_name: opentesting-grafana
+        network_mode: host
+
+    zipkin:
+        image: openzipkin/zipkin
+        container_name: opentesting-zipkin
+        network_mode: host
+
+    sonarqube:
+        image: sonarqube
+        container_name: opentesting-sonarqube
+        network_mode: host
+        environment:
+            - SONAR_EMBEDDEDDATABASE_PORT=19092
+
+    keycloak:
+        image: dcm4che/keycloak:7.0.1
+        container_name: opentesting-keycloak
+        network_mode: host
+        environment:
+            - KEYCLOAK_USER=admin
+            - KEYCLOAK_PASSWORD=admin
+
+    postgres:
+        image: postgres
+        container_name: opentesting-postgres
+        network_mode: host
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=CTYgzqP9uF8BfA9X   

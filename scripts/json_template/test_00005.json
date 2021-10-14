@@ -1,0 +1,52 @@
+{
+    "testid" : "test_00005_#STAGE#",
+    "activation" : false,
+    "description" : "oracle test case",
+    "labels" : ["stage-#STAGE#", "department-mydepartment", "function-myfunction"],    
+    "injections" : [
+     {
+        "injectid": "inject-oracle-1",
+        "triggercron" : [ "2 * * * * ?" , "13 * * * * ?", "23 * * * * ?", "34 * * * * ?", "43 * * * * ?", "53 * * * * ?" ],
+        "activation" : true,
+        "service" : "oracle",        
+        "sourcefile" : "source_oracle_1.sql",
+        "connectstring" : "jdbc:oracle:thin:@#ORACLE_SERVER#:#ORACLE_PORT#/XE",
+        "connectuser" : "e2etest",
+        "connectpassword" : "e2etest",
+        "timetolive": "5d",
+        "checks" : [ "check-oracle-1" ],
+        "randomgenerator" : {           
+          "replacements" : [
+            {
+               "replacement" : "#replaceme1#",
+               "optionlist": [ "rep11", "rep12", "rep13"],
+               "suffixactualms": true,
+               "suffixlength": 10
+            }, {
+               "replacement" : "#replaceme2#",
+               "optionlist": [ "rep21", "rep22", "rep23", "rep24"],
+               "suffixactualms": false
+            }, {
+               "replacement" : "#replaceme3#",
+               "useuuid": true
+            }
+          ]
+        }
+      }
+    ],
+    "checks": [
+     {   
+        "checkid" : "check-oracle-1",  
+        "activation" : true,
+        "service" : "oracle",
+        "serviceparam" : "sql=check_oracle_param_1.sql",
+        "expectedfile" : "check_oracle_1.json",
+        "expectedtype": "equals",
+        "connectstring" : "jdbc:oracle:thin:@#ORACLE_SERVER#:#ORACLE_PORT#/XE",
+        "connectuser" : "e2etest",
+        "connectpassword" : "e2etest",
+        "maxwaittime" : "10m",
+        "mandatory" : false
+     }
+    ]
+  }

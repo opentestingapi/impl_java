@@ -1,0 +1,8 @@
+{
+    "name":"prometheus_ds",
+    "type":"prometheus",
+    "url":"http://localhost:9090",    
+    "access":"server",
+    "basicAuth":false,
+    "isDefault":true
+}
