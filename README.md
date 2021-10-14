@@ -169,6 +169,23 @@ curl -X GET "http://<servername>:50000/reporting/bulk?bulkid=<bulkid>" -H "accep
 Swagger: http://servername:50000/swagger-ui/#/reporting-controller/bulkUsingGET
 
 
+## Password Encryption
+
+Simply use this endpoint to encrypt your passwords and use in your testcase:
+
+(need to be decrypted within the tool for later usage, hash usage does not fit our use case - salt in properties is used to increase security)
+
+```
+curl --request POST -H "Content-Type: text/plain; charset=utf-8" --url http://<servername>:50000/password/encrypt --data 'HalloWelt!123'
+```
+Swagger: http://servername:50000/swagger-ui/#/password-controller/encryptUsingPOST
+
+```
+curl --request POST -H "Content-Type: text/plain; charset=utf-8" --url http://<servername>:50000/password/decrypt --data 'ENC(e8K7wp7CusOAwpzCrMOBw5ltwpl6woQ=)'
+```
+Swagger: http://servername:50000/swagger-ui/#/password-controller/decryptUsingPOST
+
+
 ## Development Environment
 
 Local development environment could be started with docker-compose, please check content in folder dev_env.
@@ -261,23 +278,6 @@ Example Test Cases:
 [Examples](examples/)
 
 You can also find an upload script, but please take care of folder naming (test case id) and correct id in json.
-
-
-## Password Encryption
-
-Simply use this endpoint to encrypt your passwords and use in your testcase:
-
-(need to be decrypted within the tool for later usage, hash usage does not fit our use case - salt in properties is used to increase security)
-
-```
-curl --request POST -H "Content-Type: text/plain; charset=utf-8" --url http://<servername>:50000/password/encrypt --data 'HalloWelt!123'
-```
-Swagger: http://servername:50000/swagger-ui/#/password-controller/encryptUsingPOST
-
-```
-curl --request POST -H "Content-Type: text/plain; charset=utf-8" --url http://<servername>:50000/password/decrypt --data 'ENC(e8K7wp7CusOAwpzCrMOBw5ltwpl6woQ=)'
-```
-Swagger: http://servername:50000/swagger-ui/#/password-controller/decryptUsingPOST
 
 
 ## Utilities

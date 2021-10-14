@@ -225,7 +225,7 @@
 					  <!--PROBLEM FOR LOCAL ENV AS DOCKER_COMPOSE LIMITS IGNORED jvmFlag>-XX:InitialRAMPercentage=75.0</jvmFlag-->
 					  <!-- InitialRAMPercentage: use max as this is easier for JVM GC and will fail during startup not during load -->					  
 				    </jvmFlags>
-				    <mainClass>de.opentesting.OpenTestingApplication</mainClass>
+				    <mainClass>org.opentesting.OpenTestingApplication</mainClass>
 				  </container>	
 		        </configuration>           
 		    </plugin>
