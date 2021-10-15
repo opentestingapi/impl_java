@@ -80,7 +80,7 @@ options:
                "dateaddition": "-1m"
 }
 ```
-* suffiactualxms will add suffix from currentTimeMillis to the ones above and suffixlength the required suffix length
+* suffixactualms will add suffix from currentTimeMillis to the ones above and suffixlength the required suffix length
 ```
 {
                "replacement" : "#replaceme5#",
