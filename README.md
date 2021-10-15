@@ -2,8 +2,7 @@
 
 Reference implementation to upload test cases, create random data and perform tests cron triggered
 
-Dockerhub:
-https://hub.docker.com/repository/docker/robertdiers/opentesting
+Dockerhub:   https://hub.docker.com/repository/docker/robertdiers/opentesting
 
 
 ## Architecture
