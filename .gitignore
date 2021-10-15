@@ -8,6 +8,7 @@ h2/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+push_image2.sh
 
 ### STS ###
 .apt_generated
