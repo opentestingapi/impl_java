@@ -165,13 +165,18 @@ curl --request GET --url 'http://<servername>:50000/trigger/pause/<true/false>'
 ```
 Swagger: http://servername:50000/swagger-ui/#/trigger-controller/pauseUsingGET
 
-* bulk execute injects (possible pipeline integration)
+
+## Pipeline Integration / Bulk Execution
+
+You can use this endpoints to realize a pipeline integration.
+
+* bulk execute injects
 ```
 curl -X POST "http://<servername>:50000/trigger/bulk/" -H "accept: application/json" -H "Content-Type: application/json" -d "[\"<testcaseid>.<injectid>\",\"<testcaseid>.*\"]"
 ```
 Swagger: http://servername:50000/swagger-ui/#/trigger-controller/bulkUsingPOST
 
-* bulk read check results (possible pipeline integration)
+* bulk read check results
 ```
 curl -X GET "http://<servername>:50000/reporting/bulk?bulkid=<bulkid>" -H "accept: application/json"
 ```
