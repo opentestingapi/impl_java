@@ -274,6 +274,7 @@ sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cp
 |OPENTESTING_RELOADTESTCASES   |true   |reload database testcases after container restart   |
 |OPENTESTING_AUTODELETE   |7   |delete checks older than 7 days (targetts)   |
 |OPENTESTING_SALT   |   |instance specific salt for password encryption   |
+|OPENTESTING_USELOCK   |true   |use a cache to avoid user locks because of wrong credentials   |
 
 
 ## Examples
