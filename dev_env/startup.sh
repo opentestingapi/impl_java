@@ -21,7 +21,7 @@ docker exec -it opentesting-oracle-db /opt/oracle/product/18c/dbhomeXE/initializ
 
 # execute Postgre init scripts
 echo 'Execute Postgre INIT Scripts'
-docker exec -it opentesting-postgre-db /opt/oracle/product/18c/dbhomeXE/initializerscripts/execInit.sh
+docker exec -it opentesting-postgres /opt/oracle/product/18c/dbhomeXE/initializerscripts/execInit.sh
 
 # add Grafana datasources
 echo 'Add Grafana Data Sources'
