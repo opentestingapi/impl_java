@@ -19,10 +19,6 @@ docker exec -it opentesting-zookeeper /var/lib/kafka/initializerscripts/execInit
 echo 'Execute Oracle INIT Scripts'
 docker exec -it opentesting-oracle-db /opt/oracle/product/18c/dbhomeXE/initializerscripts/execInit.sh
 
-# execute Postgre init scripts
-echo 'Execute Postgre INIT Scripts'
-docker exec -it opentesting-postgres /opt/oracle/product/18c/dbhomeXE/initializerscripts/execInit.sh
-
 # add Grafana datasources
 echo 'Add Grafana Data Sources'
 cd grafana_datasources
