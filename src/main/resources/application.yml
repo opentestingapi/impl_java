@@ -12,10 +12,14 @@ opentesting:
 
 server:
   port: 50000
+  shutdown: graceful
 
 spring:
   application:
     name: opentesting
+  lifecycle:
+    #some docker orchestrators use 10 sec as default to kill containers
+    timeout-per-shutdown-phase: 5s
   datasource:
     driver-class-name: org.h2.Driver
     username: sa

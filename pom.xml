@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.4</version>
+		<version>2.5.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>de.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>0.1</version>
+	<version>1.0</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
@@ -18,9 +18,9 @@
 		<java.version>11</java.version>
 		<cassandra.version>3.11.0</cassandra.version>	
 		<springfox.version>3.0.0</springfox.version>	
-		<spring.cloud.version>3.0.2</spring.cloud.version>
-		<cache2k.version>2.0.0.Final</cache2k.version>
-		<markdownpagegenerator.version>2.3.1</markdownpagegenerator.version>
+		<spring.cloud.version>3.0.4</spring.cloud.version>
+		<cache2k.version>2.4.1.Final</cache2k.version>
+		<markdownpagegenerator.version>2.4.0</markdownpagegenerator.version>
 	</properties>
 
 	<dependencies>
@@ -102,8 +102,7 @@
 		<!-- simplify getter, setter, log ... -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<artifactId>lombok</artifactId>			
 		</dependency>
 
 		<!-- jackson extension -->
@@ -161,7 +160,7 @@
 		<!-- adapter oracle -->
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
-			<artifactId>ojdbc10</artifactId>
+			<artifactId>ojdbc11</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 

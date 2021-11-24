@@ -1,2 +1,2 @@
 # start the app as jar
-java -jar target/impl_java-0.1.jar
+java -jar target/impl_java-1.0.jar
