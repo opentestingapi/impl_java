@@ -109,7 +109,7 @@
           {
               "order": 1,
               "request": "check_rest_param1.json",
-              "response": [ "check_rest_1.json" ],
+              "response": [ "check_rest_2.json" ],
               "type": "equals"
           }
         ],         
