@@ -21,7 +21,7 @@ We would like to make it as easy as possible to extend and to fork the project, 
 
 * INJECT - insert data (default timetolive = 1 day)
 * CHECK - check data
-* INJECT will have assigned CHECKS and CHECK could have subsequent INJECTS/CHECKS  
+* CHECK could have subsequent INJECTS/CHECKS (API extension)
 * please use labels to enable label search
 * random data generation
 * available time definitions: s=second, m=minute, h=hour, d=day
@@ -40,55 +40,27 @@ the following adapters could be used:
 | rest/soap     | [ReadMe](src/main/java/org/opentesting/services/adapter/rest/README.md) |
 
 
-## Random Data Generator
+## Random Data / Replacements
 
-* multiple options available, please check list below
-* inherit from existing inject is possible using attribute: inheritfrom
-* result (only JSON!) from checks could be added to random data using attribute: result2random
-  (will be stored as #\<checkid\>.\<attribute\># and can be used in inject added to injects attribute)
+* we fully support API replacements: https://opentestingapi.github.io/specification/version-1.0/#replacement-object
+* result (only JSON!) from checks could be added to random data using attribute: result2random (API extension)
   
 Using the last feature it is possible to extend the available (random) data with additional data,
 as this is transferred into subsequent injects and checks.
+(will be stored as #\<checkid\>.\<attribute\>#)
 
-options:
-* optionlist will use exactly 1 entry from the list
+* result2random example including subsequent checks and injects
 ```
 {
-               "replacement" : "#replaceme1#",
-               "optionlist": [ "rep11", "rep12", "rep13"],
-}
-```
-* uuid will generate a Java UUID
-```
-{
-               "replacement" : "#replaceme2#",
-               "useuuid": true
-}
-```  
-* custom will give a list of valid signs and customlength the required length
-```
-{
-               "replacement" : "#replaceme3#",
-               "custom": "abcdefghijklmnopqrstuvwxyz0123456789!@#&()–[{}]:;',?/*",
-               "customlength": 10
-}
-```
-* date will use system date, adds a duration and formats output
-```
-{
-               "replacement" : "#replaceme4#",
-               "dateformat": "yyyy-MM-dd HH:mm:ss",
-               "dateaddition": "-1m"
-}
-```
-* suffixactualms will add suffix from currentTimeMillis to the ones above and suffixlength the required suffix length
-```
-{
-               "replacement" : "#replaceme5#",
-               "optionlist": [ "rep11", "rep12", "rep13"],
-               "suffixactualms": true,
-               "suffixlength": 10
-}
+        "checkid" : "check-rest-1",  
+        "active" : true,
+        "service" : {...},
+        "validations": [...],          
+        "maxwaittime" : "10m",
+        "mandatory" : false,
+        "injects" : [ "inject-rest-2" ],
+        "checks" : [ "check-rest-2" ],
+        "result2random" : [ "test1", "test2" ]
 ```
 
 

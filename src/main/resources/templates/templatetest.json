@@ -44,11 +44,11 @@
             },
             {
               "key": "jwtuser",
-              "value": "source_rest_headers_1.json"
+              "value": "jwtuser"
             },
             {
               "key": "jwtpassword",
-              "value": "source_rest_headers_1.json"
+              "value": "jwtpassword"
             },
             {
               "key": "jwtpost",
