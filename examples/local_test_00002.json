@@ -92,7 +92,7 @@
             {
                "order": 1,
                "request": "",
-               "response": [ "check_kafka_1.json" ],
+               "response": [ "check_kafka_1.txt" ],
                "type": "contains"
             }
          ],        
