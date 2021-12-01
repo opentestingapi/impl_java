@@ -1,0 +1,7 @@
+{
+    "id" : "local_test_helloworld",
+    "testapi": 1.0,
+    "description" : "helloworld test case",  
+    "injections" : [],
+    "checks": []
+}
