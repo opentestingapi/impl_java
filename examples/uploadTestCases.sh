@@ -10,11 +10,11 @@ echo ${opentestingserver}
 #for testcase in local_test_00001 #Mix
 #for testcase in local_test_00002 #Kafka
 #for testcase in local_test_00003 #Cassandra
-for testcase in local_test_00004 #Rest
+#for testcase in local_test_00004 #Rest
 #for testcase in local_test_00005 #Oracle
 #for testcase in local_test_00006 #PostGre
 #for testcase in local_test_00001 local_test_00002 local_test_00003 local_test_00004
-#for testcase in local_test_helloworld #hello world, but I will do nothing...
+for testcase in local_test_helloworld #hello world, but I will check nothing...
 do  
     echo "### ${testcase}:"
     if [ -d "${testcase}" ]; then

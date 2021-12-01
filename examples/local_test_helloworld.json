@@ -2,6 +2,25 @@
     "id" : "local_test_helloworld",
     "testapi": 1.0,
     "description" : "helloworld test case",  
-    "injections" : [],
+    "injections" : [
+      {
+         "injectid": "inject-rest-1",
+         "cron" : [ "0 * * * * ?" , "30 * * * * ?" ],
+         "active" : true,
+         "service" : {
+            "type": "rest",
+            "connectstring": "http://localhost:50000/dummy/get",
+            "username": "",
+            "password": "",
+            "custom": [
+              {
+                "key": "type",
+                "value": "GET"
+              }
+            ]
+         },           
+         "timetolive": "5d"
+      }
+    ],
     "checks": []
 }
