@@ -1,51 +1,101 @@
 {
-    "testid" : "local_test_00002",
-    "activation" : true,
+    "id" : "local_test_00002",
+    "testapi": 1.0,
+    "active" : true,
     "description" : "kafka test case",
     "labels" : ["stage-local", "department-mydepartment", "function-myfunction"],    
     "injections" : [
      {     
         "injectid": "inject-kafka-1",
-        "triggercron" : [ "0 * * * * ?" , "12 * * * * ?", "21 * * * * ?", "30 * * * * ?", "41 * * * * ?", "52 * * * * ?" ],
-        "activation" : true,
-        "service" : "kafka",
-        "serviceparam" : "header=source_kafka_headers_1.json",
-        "sourcefile" : "source_kafka_1.txt",
-        "connectstring" : "broker=localhost:9092;topic=mytopic1",
-        "connectuser" : "",
-        "connectpassword" : "",
+        "cron" : [ "0 * * * * ?" , "12 * * * * ?", "21 * * * * ?", "30 * * * * ?", "41 * * * * ?", "52 * * * * ?" ],
+        "active" : true,
+        "service" : {
+            "type": "kafka",
+            "connectstring": "localhost:9092",
+            "username": "",
+            "password": "",
+            "custom": [
+               {
+                  "key": "topic",
+                  "value": "mytopic1"
+               },
+               {
+                  "key": "header",
+                  "value": "source_kafka_headers_1.json"
+               }
+            ]
+         },        
+        "sourcefile" : "source_kafka_1.txt",        
         "timetolive": "5d",
         "checks" : [ "check-kafka-1" ],
-        "randomgenerator" : {           
-          "replacements" : [
-            {
-               "replacement" : "#replaceme1#",
-               "optionlist": [ "rep11", "rep12", "rep13"],
-               "suffixactualms": true,
-               "suffixlength": 10
-            }, {
-               "replacement" : "#replaceme2#",
-               "optionlist": [ "rep21", "rep22", "rep23", "rep24"],
-               "suffixactualms": false
-            }, {
-               "replacement" : "#replaceme3#",
-               "useuuid": true
-            }
-          ]
-        }
+        "replacements" : [
+         {
+            "key": "#replaceme1#",
+            "value": [
+               {
+                  "order": 1,
+                  "type": "list",
+                  "value": "rep11|rep12|rep13"
+               }
+            ]
+          },
+          {
+             "key": "#replaceme2#",
+             "value": [
+                {
+                   "order": 1,
+                   "type": "list",
+                   "value": "rep21|rep22|rep23|rep24"
+                },
+                {
+                   "order": 2,
+                   "type": "now",
+                   "value": "Q"
+                }
+             ],
+             "maxlength": 10
+           },
+           {
+             "key": "#replaceme3#",
+             "value": [
+                {
+                   "order": 3,
+                   "type": "regex",
+                   "value": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+                }
+             ]
+           }  
+       ]
      }
     ],
     "checks": [
     {   
         "checkid" : "check-kafka-1",  
-        "activation" : true,
-        "service" : "kafka",
-        "serviceparam" : "group.id=e2etests",
-        "expectedfile" : "check_kafka_1.txt",
-        "expectedtype": "contains",
-        "connectstring" : "broker=localhost:9092;topic=mytopic1",
-        "connectuser" : "",
-        "connectpassword" : "",
+        "active" : true,
+        "service" : {
+            "type": "kafka",
+            "connectstring": "localhost:9092",
+            "username": "",
+            "password": "",
+            "custom": [
+               {
+                  "key": "topic",
+                  "value": "mytopic1"
+               },
+               {
+                  "key": "group.id",
+                  "value": "e2etests"
+               }
+            ]
+         },
+         "validations": [
+            {
+               "order": 1,
+               "request": "",
+               "response": [ "check_kafka_1.json" ],
+               "type": "contains"
+            }
+         ],        
         "maxwaittime" : "10m",
         "mandatory" : false
      }

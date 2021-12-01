@@ -1,44 +1,86 @@
 {
-    "testid" : "local_test_00004",
-    "activation" : true,
+    "id" : "local_test_00004",
+    "testapi": 1.0,
+    "active" : true,
     "description" : "rest test case",
     "labels" : ["stage-local", "department-mydepartment", "function-myfunction"],    
     "injections" : [
      {
          "injectid": "inject-rest-1",
-         "triggercron" : [ "0 * * * * ?" , "30 * * * * ?" ],
-         "activation" : true,
-         "service" : "rest",        
-         "serviceparam" : "header=source_rest_headers_1.json",    
+         "cron" : [ "0 * * * * ?" , "30 * * * * ?" ],
+         "active" : true,
+         "service" : {
+            "type": "rest",
+            "connectstring": "http://localhost:50000/dummy/post",
+            "username": "",
+            "password": "",
+            "custom": [
+              {
+                "key": "type",
+                "value": "POST"
+              },
+              {
+                "key": "header",
+                "value": "source_rest_headers_1.json"
+              }
+            ]
+        },           
          "sourcefile" : "source_rest_1.json",
-         "connectstring" : "type=POST;url=http://localhost:50000/dummy/post",
-         "connectuser" : "",
-         "connectpassword" : "",
          "timetolive": "5d",
          "checks" : [ "check-rest-1" ]
       },
       {
         "injectid": "inject-rest-2",
         "triggercron" : [],
-        "activation" : true,
-        "service" : "rest",
-        "serviceparam" : "header=source_rest_headers_1.json",
+        "active" : true,
+        "service" : {
+          "type": "rest",
+          "connectstring": "http://localhost:50000/dummy/post",
+          "username": "",
+          "password": "",
+          "custom": [
+            {
+              "key": "type",
+              "value": "POST"
+            },
+            {
+              "key": "header",
+              "value": "source_rest_headers_1.json"
+            }
+          ]
+        },
         "sourcefile" : "source_rest_1.json",
-        "connectstring" : "type=POST;url=http://localhost:50000/dummy/post",
-        "connectuser" : "",
-        "connectpassword" : "",
         "timetolive": "5d"
       }
     ],
     "checks": [
      {   
         "checkid" : "check-rest-1",  
-        "activation" : true,
-        "service" : "rest",
-        "serviceparam" : "header=check_rest_headers_1.json",
-        "expectedfile" : "check_rest_1.json",
-        "expectedtype": "equals",
-        "connectstring" : "type=GET;url=http://localhost:50000/dummy/get",        
+        "active" : true,
+        "service" : {
+          "type": "rest",
+          "connectstring": "http://localhost:50000/dummy/get",
+          "username": "",
+          "password": "",
+          "custom": [
+            {
+              "key": "type",
+              "value": "GET"
+            },
+            {
+              "key": "header",
+              "value": "check_rest_headers_1.json"
+            }
+          ]
+        },
+        "validations": [
+          {
+              "order": 1,
+              "request": "",
+              "response": [ "check_rest_1.json" ],
+              "type": "equals"
+          }
+        ],          
         "maxwaittime" : "10m",
         "mandatory" : false,
         "injects" : [ "inject-rest-2" ],
@@ -46,12 +88,31 @@
         "result2random" : [ "test1", "test2" ]
      }, {
         "checkid" : "check-rest-2",
-        "activation" : true,
-        "service" : "rest",
-        "serviceparam" : "header=check_rest_headers_1.json",
-        "expectedfile" : "check_rest_1.json",
-        "expectedtype": "equals",
-        "connectstring" : "type=GET;url=http://localhost:50000/dummy/get",
+        "active" : true,
+        "service" : {
+          "type": "rest",
+          "connectstring": "http://localhost:50000/dummy/post",
+          "username": "",
+          "password": "",
+          "custom": [
+            {
+              "key": "type",
+              "value": "POST"
+            },
+            {
+              "key": "header",
+              "value": "check_rest_headers_1.json"
+            }
+          ]
+        },
+        "validations": [
+          {
+              "order": 1,
+              "request": "check_rest_param1.json",
+              "response": [ "check_rest_1.json" ],
+              "type": "equals"
+          }
+        ],         
         "maxwaittime" : "10m",
         "mandatory" : false
       }
