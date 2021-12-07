@@ -43,11 +43,11 @@ the following adapters could be used:
 ## Random Data / Replacements
 
 * we fully support API replacements: https://opentestingapi.github.io/specification/version-1.0/#replacement-object
-* result (only JSON!) from checks could be added to random data using attribute: result2random (API extension)
+* result (only JSON!) from checks/injects could be added to random data using attribute: result2random (API extension)
   
 Using the last feature it is possible to extend the available (random) data with additional data,
 as this is transferred into subsequent injects and checks.
-(will be stored as #\<checkid\>.\<attribute\>#)
+(will be stored as #\<checkid\>.\<attribute\># or #\<injectid\>.\<attribute\>#)
 
 * result2random example including subsequent checks and injects
 ```
@@ -61,6 +61,7 @@ as this is transferred into subsequent injects and checks.
         "injects" : [ "inject-rest-2" ],
         "checks" : [ "check-rest-2" ],
         "result2random" : [ "test1", "test2" ]
+}
 ```
 
 
