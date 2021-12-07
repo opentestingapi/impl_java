@@ -8,7 +8,7 @@
 		<version>2.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>de.opentesting</groupId>
+	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
 	<version>1.0</version>
 	<name>impl_java</name>
@@ -21,7 +21,7 @@
 		<spring.cloud.version>3.0.4</spring.cloud.version>
 		<cache2k.version>2.4.1.Final</cache2k.version>
 		<markdownpagegenerator.version>2.4.0</markdownpagegenerator.version>
-		<rgxgen.version>1.3</rgxgen.version>
+		<rgxgen.version>1.3</rgxgen.version>		
 	</properties>
 
 	<dependencies>
