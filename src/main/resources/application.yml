@@ -24,7 +24,7 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password: password
-    url: jdbc:h2:file:./h2/testcasedb;DB_CLOSE_ON_EXIT=FALSE;mode=PostgreSQL
+    url: jdbc:h2:file:/tmp/testcasedb;DB_CLOSE_ON_EXIT=FALSE;mode=PostgreSQL
     #driver-class-name: org.postgresql.Driver
     #username: postgres
     #password: CTYgzqP9uF8BfA9X
@@ -46,4 +46,4 @@ management:
 
 logging:
   file:
-    name: logs/opentesting.log
+    name: tmp/opentesting.log

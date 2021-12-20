@@ -42,4 +42,4 @@ management:
 
 logging:
   file:
-    name: logs/opentesting.log
+    name: tmp/opentesting.log
