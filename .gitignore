@@ -1,8 +1,7 @@
 HELP.md
 .mvn/
 target/
-logs/
-h2/
+tmp/
 *.mv.db
 *.trace.db
 !.mvn/wrapper/maven-wrapper.jar
