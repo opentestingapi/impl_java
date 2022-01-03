@@ -26,7 +26,7 @@
             ]
          },        
         "sourcefile" : "source_kafka_1.txt",        
-        "timetolive": "5d",
+        "timetolive": "1m",
         "checks" : [ "check-kafka-1" ],
         "replacements" : [
          {
