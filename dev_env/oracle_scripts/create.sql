@@ -4,7 +4,7 @@ GRANT CONNECT, RESOURCE TO e2etest;
 GRANT UNLIMITED TABLESPACE TO e2etest;
 
 CREATE TABLE e2etest.e2etesttable(
-   test varchar2(1000) PRIMARY KEY
+   test varchar2(1000)
 );
 
 INSERT INTO e2etest.e2etesttable(test) values ('test1');
