@@ -8,6 +8,7 @@ services:
             - ${HOME}/.config/code-server/config.yaml:/home/coder/.config/code-server/config.yaml
             - ${HOME}/.m2/repository:/home/coder/.m2/repository
             - ${HOME}/.m2/settings.xml:/home/coder/.m2/settings.xml
+            - ${HOME}/.gitconfig:/home/coder/.gitconfig
             - ${PWD}/..:/home/coder/project
         environment:
             - DOCKER_USER=$USER
