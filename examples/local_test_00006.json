@@ -1,6 +1,6 @@
 {
     "id" : "local_test_00006",
-    "testapi": 1.0,
+    "testapi": "1.0",
     "active" : true,
     "description" : "postgresql test case",
     "labels" : ["stage-local", "department-mydepartment", "function-myfunction"],    

@@ -1,6 +1,6 @@
 {
     "id" : "local_test_00001",
-    "testapi": 1.0,
+    "testapi": "1.0",
     "active" : true,
     "description" : "mixed test case",
     "labels" : ["stage-all", "department-mydepartment", "function-myfunction"],    

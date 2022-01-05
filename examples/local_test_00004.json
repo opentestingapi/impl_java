@@ -1,6 +1,6 @@
 {
     "id" : "local_test_00004",
-    "testapi": 1.0,
+    "testapi": "1.0",
     "active" : true,
     "description" : "rest test case",
     "labels" : ["stage-local", "department-mydepartment", "function-myfunction"],    
