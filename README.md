@@ -44,6 +44,7 @@ the following adapters could be used:
 
 * we fully support API replacements: https://opentestingapi.github.io/specification/version-1.0/#replacement-object
 * result (only JSON!) from checks/injects could be added to random data using attribute: result2random (API extension)
+* subsequent checks/injects will be executed if non-mandatory checks failed, for mandatory failed ones whey will not be executed
   
 Using the last feature it is possible to extend the available (random) data with additional data,
 as this is transferred into subsequent injects and checks.
