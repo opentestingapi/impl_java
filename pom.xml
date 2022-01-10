@@ -211,6 +211,17 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!-- get version and name in application properties -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>				
+				<configuration>
+					<delimiters>
+						<delimiter>^</delimiter>
+					</delimiters>
+					<useDefaultDelimiters>false</useDefaultDelimiters>
+				</configuration>
+			</plugin>
 			<!-- markdown to html -->
 			<plugin>
 				<groupId>com.ruleoftech</groupId>
