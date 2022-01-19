@@ -9,3 +9,4 @@ RUN sudo apt install -y openjdk-11-jdk
 RUN code-server --install-extension vscjava.vscode-java-pack
 RUN code-server --install-extension GabrielBB.vscode-lombok
 RUN code-server --install-extension SonarSource.sonarlint-vscode
+RUN code-server --install-extension redhat.fabric8-analytics
