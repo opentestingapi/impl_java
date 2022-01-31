@@ -1,4 +1,4 @@
-FROM codercom/code-server:latest
+FROM codercom/code-server:3.11.1
 
 #install environment requirements
 RUN sudo apt update
