@@ -11,7 +11,7 @@
         "active" : true,
         "service" : {
             "type": "oracle",
-            "connectstring": "jdbc:oracle:thin:@localhost:1521/XE",
+            "connectstring": "jdbc:oracle:thin:@oracle-db:1521/XE",
             "username": "e2etest",
             "password": "e2etest"
         },       
@@ -64,7 +64,7 @@
         "active" : true,
         "service" : {
             "type": "jdbc",
-            "connectstring": "jdbc:oracle:thin:@localhost:1521/XE",
+            "connectstring": "jdbc:oracle:thin:@oracle-db:1521/XE",
             "username": "e2etest",
             "password": "e2etest"
          },

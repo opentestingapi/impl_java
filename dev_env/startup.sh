@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # start all containers
-EXAMPLE_UID=${UID} EXAMPLE_GID=${GID} docker-compose -p opentesting-stack up --detach --build
+EXAMPLE_UID=${UID} EXAMPLE_GID=${GID} docker-compose -p opentesting-stack up -d --build
 
 # waiting for cassandra
 echo 'Sleeping 120 sec'
@@ -16,8 +16,8 @@ echo 'Execute Kafka INIT Scripts'
 docker exec -it opentesting-zookeeper /var/lib/kafka/initializerscripts/execInit.sh
 
 # execute Oracle init scripts
-echo 'Execute Oracle INIT Scripts'
-docker exec -it opentesting-oracle-db /opt/oracle/product/18c/dbhomeXE/initializerscripts/execInit.sh
+#echo 'Execute Oracle INIT Scripts'
+#docker exec -it opentesting-oracle-db /opt/oracle/product/18c/dbhomeXE/initializerscripts/execInit.sh
 
 # add Grafana datasources
 echo 'Add Grafana Data Sources'
