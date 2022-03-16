@@ -11,7 +11,7 @@
         "active" : true,
         "service" : {
             "type": "cassandra",
-            "connectstring": "localhost:9042",
+            "connectstring": "cassandra-db:9042",
             "username": "e2etest",
             "password": "e2etest"            
          },      
@@ -64,7 +64,7 @@
         "active" : true,
         "service" : {
             "type": "cassandra",
-            "connectstring": "localhost:9042",
+            "connectstring": "cassandra-db:9042",
             "username": "e2etest",
             "password": "e2etest"
          },
@@ -83,7 +83,7 @@
         "active" : true,
         "service" : {
             "type": "cassandra",
-            "connectstring": "localhost:9042",
+            "connectstring": "cassandra-db:9042",
             "username": "e2etest",
             "password": "e2etest"
          },

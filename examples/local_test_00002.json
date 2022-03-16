@@ -11,7 +11,7 @@
         "active" : true,
         "service" : {
             "type": "kafka",
-            "connectstring": "localhost:9092",
+            "connectstring": "kafka-broker:9092",
             "username": "",
             "password": "",
             "custom": [
@@ -74,7 +74,7 @@
         "active" : true,
         "service" : {
             "type": "kafka",
-            "connectstring": "localhost:9092",
+            "connectstring": "kafka-broker:9092",
             "username": "",
             "password": "",
             "custom": [

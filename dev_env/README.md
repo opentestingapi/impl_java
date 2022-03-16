@@ -4,6 +4,8 @@ local development environment including visual studio code server as IDE
 
 You may want to comment out containers for adapters your not interested in to decrease resource consumption.
 
+Prometheus config might require permission fix, please check script in prometheusconfig folder.
+
 ## URLs
 
 Visual Studio Code Server: 
