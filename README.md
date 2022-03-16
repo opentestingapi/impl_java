@@ -2,10 +2,14 @@
 
 Reference implementation to upload test cases, create random data and perform tests cron triggered
 
-<b>Version: 1.0</b>
+<b>Version: 1.1</b>
 
 Dockerhub:   https://hub.docker.com/repository/docker/robertdiers/opentesting
 
+| VERSION     | CHANGELOG                                           |
+| ------------- |-----------------------------------------------------|
+| 1.0 | initial version with API 1.0                        |
+| 1.1  | support additional http types like PUT, DELETE, ... |
 
 ## Architecture
 
