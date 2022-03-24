@@ -47,8 +47,7 @@ the following adapters could be used:
 ## Random Data / Replacements
 
 * we fully support API replacements: https://opentestingapi.github.io/specification/version-1.0/#replacement-object
-* result (only JSON!) from checks/injects could be added to random data using attribute: result2random (API extension)
-  (be careful with result2random usage before kafka checks, often messages are created earlier than the check has access to result to random value)
+* result (only JSON!) from checks/injects could be added to random data using attribute: result2random (API extension - be careful with result2random usage before kafka checks, often messages are created earlier than the check has access to result to random value)
 * subsequent checks/injects will be executed if non-mandatory checks failed, for mandatory failed ones whey will not be executed
   
 Using the last feature it is possible to extend the available (random) data with additional data,
