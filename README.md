@@ -6,10 +6,11 @@ Reference implementation to upload test cases, create random data and perform te
 
 Dockerhub:   https://hub.docker.com/repository/docker/robertdiers/opentesting
 
-| VERSION | API | CHANGELOG                                                                                   |
-|------|------|---------------------------------------------------------------------------------------------|
-| 1.0 | 1.0 | initial version with API 1.0                                                                |
-| 1.1 | 1.0 | support additional http types like PUT, DELETE, ...; allow http return code checks for REST |
+| VERSION | API | CHANGELOG                                                                                                                         |
+|---------|------|-----------------------------------------------------------------------------------------------------------------------------------|
+| 1.0     | 1.0 | initial version with API 1.0                                                                                                      |
+| 1.1     | 1.0 | support additional http types like PUT, DELETE, ...; allow http return code checks for REST                                       |
+| 1.2     | 1.0 | inheritfrom supports data added with result2random (source inject) - you can "fake" a time delay with this using 2 different cron |
 
 ## Architecture
 
