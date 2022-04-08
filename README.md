@@ -4,7 +4,7 @@ Reference implementation to upload test cases, create random data and perform te
 
 <b>Version: 1.2</b>
 
-Dockerhub:   https://hub.docker.com/repository/docker/robertdiers/opentesting
+Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentesting
 
 | VERSION | API | CHANGELOG                                                                                                                         |
 |---------|------|-----------------------------------------------------------------------------------------------------------------------------------|
