@@ -4,14 +4,8 @@
 name: Maven Package
 
 on:
-<<<<<<< HEAD
-  push:
-    tags:
-      - '*'
-=======
   release:
     types: [created]
->>>>>>> 732166a866e9b8374e12afdb26e38be0ea37a1da
 
 jobs:
   build:
