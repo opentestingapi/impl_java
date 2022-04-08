@@ -293,5 +293,3 @@ Info / Metrics / Log / everything else:
 ## Templating
 
 [Example](scripts/json_template/)
-
-
