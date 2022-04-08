@@ -34,21 +34,21 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Tag opentesting:latest
-      run: docker tag opentesting:latest ghcr.io/robertdiers/opentesting:latest
+      run: docker tag opentesting:latest ghcr.io/opentestingapi/opentesting:latest
       env:
         GITHUB_TOKEN: ${{ github.token }}
     
     - name: Tag opentesting:1.2
-      run: docker tag opentesting:latest ghcr.io/robertdiers/opentesting:1.2
+      run: docker tag opentesting:latest ghcr.io/opentestingapi/opentesting:1.2
       env:
         GITHUB_TOKEN: ${{ github.token }}
     
     - name: Push opentesting:latest
-      run: docker push ghcr.io/robertdiers/opentesting:latest
+      run: docker push ghcr.io/opentestingapi/opentesting:latest
       env:
         GITHUB_TOKEN: ${{ github.token }}
     
     - name: Push opentesting:1.2
-      run: docker push ghcr.io/robertdiers/opentesting:1.2
+      run: docker push ghcr.io/opentestingapi/opentesting:1.2
       env:
         GITHUB_TOKEN: ${{ github.token }}
