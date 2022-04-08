@@ -36,7 +36,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Version
-      run: echo ${GITHUB_REF##*/}
+      run: echo "Version: ${GITHUB_REF##*/}"
     
     - name: Tag opentesting:latest
       run: docker tag opentesting:latest ghcr.io/opentestingapi/opentesting:latest
