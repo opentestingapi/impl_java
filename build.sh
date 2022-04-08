@@ -1,2 +1,2 @@
 # build app
-mvn clean install
+mvn clean install jib:dockerBuild
