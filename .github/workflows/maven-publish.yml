@@ -26,7 +26,22 @@ jobs:
     - name: Build with Maven
       run: mvn clean install jib:dockerBuild
 
-    - name: Publish to Repository
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+    - name: Tag opentesting:latest
+      run: docker tag opentesting:latest robertdiers/opentesting:latest
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    
+    - name: Tag opentesting:1.2
+      run: docker tag opentesting:latest robertdiers/opentesting:1.2
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    
+    - name: Push opentesting:latest
+      run: docker push robertdiers/opentesting:latest
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    
+    - name: Push opentesting:1.2
+      run: docker push robertdiers/opentesting:1.2
       env:
         GITHUB_TOKEN: ${{ github.token }}
