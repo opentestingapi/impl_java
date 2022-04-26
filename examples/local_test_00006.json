@@ -11,9 +11,9 @@
         "active" : true,
         "service" : {
            "type": "jdbc",
-           "connectstring": "jdbc:postgresql://postgres:5432/",
-           "username": "postgres",
-           "password": "CTYgzqP9uF8BfA9X"
+           "connectstring": "jdbc:postgresql://localhost:5432/postgres",
+           "username": "e2etest",
+           "password": "e2etest"
         },
         "sourcefile" : "source_postgresql_1.sql",
         "timetolive": "5d",
@@ -64,9 +64,9 @@
         "active" : true,
         "service" : {
             "type": "jdbc",
-            "connectstring": "jdbc:postgresql://postgres:5432/",
-            "username": "postgres",
-            "password": "CTYgzqP9uF8BfA9X"
+            "connectstring": "jdbc:postgresql://localhost:5432/postgres",
+            "username": "e2etest",
+            "password": "e2etest"
         },
         "validations": [
          {
