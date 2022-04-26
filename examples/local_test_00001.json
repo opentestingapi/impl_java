@@ -11,7 +11,7 @@
         "active" : true,
         "service" : {
             "type": "kafka",
-            "connectstring": "kafka-broker:9092",
+            "connectstring": "localhost:9092",
             "username": "",
             "password": "",
             "custom": [
@@ -95,7 +95,7 @@
         "active" : true,
         "service" : {
             "type": "cassandra",
-            "connectstring": "cassandra-db:9042",
+            "connectstring": "localhost:9042",
             "username": "e2etest",
             "password": "e2etest"            
          },           
@@ -183,7 +183,7 @@
         "active" : true,
         "service" : {
             "type": "kafka",
-            "connectstring": "kafka-broker:9092",
+            "connectstring": "localhost:9092",
             "username": "",
             "password": "",
             "custom": [

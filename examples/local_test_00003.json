@@ -11,7 +11,7 @@
         "active" : true,
         "service" : {
             "type": "cassandra",
-            "connectstring": "cassandra-db:9042",
+            "connectstring": "localhost:9042",
             "username": "e2etest",
             "password": "e2etest"            
          },      
