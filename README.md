@@ -268,9 +268,9 @@ Test Case Template:
 
 Example Test Cases:
 
-[Hello World Example](src/test/resources/opentesting/sonstige/local_test_helloworld.json)
+[Hello World Example](src/test/resources/opentesting/other/local_test_helloworld.json)
 
-[Complex Example](src/test/resources/opentesting/sonstige/local_test_00001/test.json)
+[Complex Example](src/test/resources/opentesting/other/local_test_00001/test.json)
 
 [Systemtests](src/test/resources/opentesting/systemtests/) - used for automatic adapter testing
 
