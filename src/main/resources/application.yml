@@ -54,6 +54,12 @@ spring:
     service:
       name: opentesting
 
+springdoc:
+  swagger-ui:
+    operationsSorter: alpha
+    path: /swagger-ui/api-docs.html
+    tagsSorter: alpha
+
 management:
   endpoints:
     web:

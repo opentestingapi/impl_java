@@ -18,7 +18,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<cassandra.version>3.11.1</cassandra.version>	
-		<springfox.version>3.0.0</springfox.version>	
+		<springdoc.version>1.2.19</springdoc.version>	
 		<spring.cloud.version>3.1.1</spring.cloud.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
 		<markdownpagegenerator.version>2.4.0</markdownpagegenerator.version>
@@ -138,16 +138,11 @@
 			<version>${cache2k.version}</version>
 		</dependency>
 
-		<!-- swagger support -->
+		<!-- openapi support -->
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-boot-starter</artifactId>
-			<version>${springfox.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>${springfox.version}</version>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>${springdoc.version}</version>
 		</dependency>
 
 		<!-- adapter kafka -->
