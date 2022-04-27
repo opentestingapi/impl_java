@@ -7,10 +7,11 @@ Reference implementation to upload test cases, create random data and perform te
 Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentesting
 
 | VERSION | API | CHANGELOG                                                                                                                         |
-|---------|------|-----------------------------------------------------------------------------------------------------------------------------------|
+|---------|-----|-----------------------------------------------------------------------------------------------------------------------------------|
 | 1.0     | 1.0 | initial version with API 1.0                                                                                                      |
 | 1.1     | 1.0 | support additional http types like PUT, DELETE, ...; allow http return code checks for REST                                       |
 | 1.2     | 1.0 | inheritfrom supports data added with result2random (source inject) - you can "fake" a time delay with this using 2 different cron |
+| 1.3     | 1.0 | introduced senddelay for Kafka producer, fixed timer bug for reloadtestcases, dependency upgrades                                 |
 
 ## Architecture
 
@@ -203,8 +204,7 @@ Local build and Run (please start local environment PostGre or configure H2):
 Local build and Container creation (you might want to use your own tags and repositories):
 
 ```
-./create_image.sh
-./push_image.sh
+./build.sh
 ```
 
 
@@ -268,9 +268,11 @@ Test Case Template:
 
 Example Test Cases:
 
-[Examples](examples/)
+[Hello World Example](src/test/resources/opentesting/sonstige/local_test_helloworld.json)
 
-You can also find an upload script, but please take care of folder naming (test case id) and correct id in json.
+[Complex Example](src/test/resources/opentesting/sonstige/local_test_00001/test.json)
+
+[Systemtests](src/test/resources/opentesting/systemtests/) - used for automatic adapter testing
 
 
 ## Utilities

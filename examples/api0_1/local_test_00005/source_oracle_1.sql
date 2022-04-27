@@ -1,1 +1,0 @@
-INSERT INTO e2etest.e2etesttable(test) values ('#replaceme1#')

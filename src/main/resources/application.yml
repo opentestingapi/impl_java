@@ -27,10 +27,7 @@ server:
 
 spring:
   application:
-    name: opentesting
-  lifecycle:
-    #some docker orchestrators use 10 sec as default to kill containers
-    timeout-per-shutdown-phase: 5s
+    name: opentesting  
   datasource:
     driver-class-name: org.h2.Driver
     username: sa
@@ -40,6 +37,14 @@ spring:
     #username: postgres
     #password: CTYgzqP9uF8BfA9X
     #url: jdbc:postgresql://172.17.0.1:5432/postgres
+  lifecycle:
+    #some docker orchestrators use 10 sec as default to kill containers
+    timeout-per-shutdown-phase: 5s
+  main:
+    allow-circular-references: true
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
   sleuth:
     async:
       enabled: false
