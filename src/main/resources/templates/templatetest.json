@@ -7,6 +7,7 @@
     "injections" : [
      {
         "injectid" : "inject-mq-1",
+        "description" : "my example inject with mq",
         "cron" : [ "* 1 * * * ?", "10 * * * * ?" ],
         "active" : true,
         "service" : {
@@ -26,6 +27,7 @@
         "checks" : [ "check-kafka-1", "check-oracle-1" ]
      }, {
         "injectid" : "inject-rest-1",
+        "description" : "my example inject with rest",
         "cron" : [ "* 2 * * * ?", "20 * * * * ?" ],
         "active" : true,
         "service" : {
@@ -130,6 +132,7 @@
           ]
       }, {
         "injectid" : "inject-kafka-1",
+        "description" : "my example inject with kafka",
         "cron" : [ "* 3 * * * ?", "30 * * * * ?" ],
         "active" : true,
         "service" : {
@@ -187,6 +190,7 @@
     "checks": [
      {
         "checkid" : "check-kafka-1",
+        "description" : "my example check with kafka",
         "active" : true,
         "service" : {
           "type": "kafka",
@@ -217,6 +221,7 @@
         "injects" : [ "inject-mq-1" ]
      }, {
         "checkid" : "check-kafka-2",
+        "description" : "my 2nd example check with kafka",
         "active" : true,
         "service" : {
           "type": "kafka",
@@ -246,6 +251,7 @@
         "mandatory" : false
      }, {
         "checkid" : "check-cassandra-1",
+        "description" : "my example check with cassandra",
         "active" : true,
         "service" : {
           "type": "cassandra",
@@ -265,6 +271,7 @@
         "mandatory" : true
      }, {
         "checkid" : "check-oracle-1",
+        "description" : "my example check with oracle",
         "active" : true,
         "service" : {
           "type": "jdbc",
@@ -283,6 +290,7 @@
         "mandatory" : false
      }, {
         "checkid" : "check-rest-1",
+        "description" : "my example check with rest",
         "active" : true,
         "service" : {
           "type": "rest",
