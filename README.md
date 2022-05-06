@@ -11,6 +11,7 @@ Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentest
 | 1.2     | 1.0 | inheritfrom supports data added with result2random (source inject) - you can "fake" a time delay with this using 2 different cron                            |
 | 1.3     | 1.0 | introduced senddelay for Kafka producer, fixed timer bug for reloadtestcases, dependency upgrades, Sonar fixes, new DevEnv, systemtests, springdoc migration |
 | 1.4     | 1.0 | decreased some log levels, removed logs for "zero" values, unique names testcontainer, increased readability system test output                              |
+| 1.5     | 1.0 | result content-type and logic fixed for pause endpoint, more understandable log for checks, new field description for injects and checks                     |
 
 ## Architecture
 
