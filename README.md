@@ -210,11 +210,11 @@ Local build and Container creation (you might want to use your own tags and repo
 
 ## Container Usage / Environment Variables
 
-You should run this tool as a container - we prefer host network to get access to local apps:
+You should run this tool as a container (maybe with network host if you want to test local services):
 
-local with host network
+local
 ```
-docker run -d --network host --name=opentesting --restart=always ghcr.io/opentestingapi/opentesting:latest
+docker run -d -p 50000:50000 --name=opentesting --restart=always ghcr.io/opentestingapi/opentesting:latest
 ```
 
 server with 2 GB RAM and 2 cores
