@@ -210,16 +210,16 @@ Local build and Container creation (you might want to use your own tags and repo
 
 ## Container Usage / Environment Variables
 
-You should run this tool as a container:
+You should run this tool as a container - we prefer host network to get access to local apps:
 
-local
+local with host network
 ```
-docker run -d -p 50000:50000 --name=opentesting --restart=always robertdiers/opentesting:latest
+docker run -d --network host --name=opentesting --restart=always ghcr.io/opentestingapi/opentesting:latest
 ```
 
 server with 2 GB RAM and 2 cores
 ```
-docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" robertdiers/opentesting:latest
+docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" ghcr.io/opentestingapi/opentesting:latest
 ```
 
 use external PostGre instead of internal H2 database
@@ -230,7 +230,7 @@ sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cp
     -e "SPRING_DATASOURCE_USERNAME=<user>" \
     -e "SPRING_DATASOURCE_PASSWORD=<password>" \
     -e "SPRING_DATASOURCE_URL=jdbc:postgresql://<servername>:<port>/<databasename>" \
-    robertdiers/opentesting:latest
+    ghcr.io/opentestingapi/opentesting:latest
 ```
 
 integrate with Sleuth / Zipkin Tracing (default sampling rate 0.0)
@@ -239,7 +239,7 @@ sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cp
     -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" \
     -e "SPRING_SLEUTH_SAMPLER_PERCENTAGE=1.0" \
     -e "SPRING_ZIPKIN_BASEURL=<zipkinserver>" \
-    robertdiers/opentesting:latest
+    ghcr.io/opentestingapi/opentesting:latest
 ```
 
 ### Parameters (can be used similar to SPRING_DATASOURCE_USERNAME)
