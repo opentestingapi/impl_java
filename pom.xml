@@ -17,7 +17,8 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<cassandra.version>3.11.1</cassandra.version>	
+		<cassandra.version>3.11.1</cassandra.version>
+		<aws.sdk.version>1.12.234</aws.sdk.version>
 		<springdoc.version>1.2.19</springdoc.version>	
 		<spring.cloud.version>3.1.1</spring.cloud.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
@@ -173,6 +174,13 @@
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc11</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+
+		<!-- adapter S3 -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>${aws.sdk.version}</version>
 		</dependency>
 
 		<!-- regex to random value -->
