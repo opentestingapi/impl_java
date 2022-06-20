@@ -16,6 +16,8 @@ app:
 
 server:
   port: 50000
+  servlet:
+    context-path: /
   shutdown: graceful
   
 spring:
