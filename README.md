@@ -14,6 +14,7 @@ Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentest
 | 1.5     | 1.0 | result content-type and logic fixed for pause endpoint, more understandable log for checks, new field description for injects and checks                     |
 | 1.6     | 1.0 | S3-Adapter, Swagger-UI bugfixes (content-type upload)                                                                                                        |
 | 1.7     | 1.0 | using relative path for Swagger-UI (simplifies proxy usage, for example https)                                                                               |
+| 1.8     | 1.0 | data generator endpoint to create mass data from testcases                                                                                                   |
 
 ## Architecture
 
@@ -89,66 +90,65 @@ Please think about using a kind of folder structure to differ between functional
 
 ## API Usage
 
+Swagger-UI: http://<servername>:50000/swagger-ui/swagger-ui/index.html
+
+
 1. upload required files first (please use application/json for all file types): 
 ```
 curl -X POST "http://<servername>:50000/upload/file/<testcaseid>/<filename>" -H "accept: */*" -H "Content-Type: application/json" -d @<filename> && echo
 ```
-Swagger: http://servername:50000/swagger-ui/#/upload-controller/fileuploadUsingPOST
+
 
 2. upload test case as JSON:
 ```
 curl -X POST "http://<servername>:50000/upload/test" -H "accept: */*" -H "Content-Type: application/json" -d @<filename> && echo
 ```
-Swagger: http://servername:50000/swagger-ui/#/upload-controller/testuploadUsingPOST
 
 
 * remove test case
 ```
 curl --request DELETE --url http://<servername>:50000/upload/test/<testcaseid>
 ```
-Swagger: http://servername:50000/swagger-ui/#/upload-controller/testremovalUsingDELETE
 
 * read test case
 ```
 curl --request GET --url 'http://<servername>:50000/reporting/test/<testcaseid>?lastchecks=100'
 ```
-Swagger: http://servername:50000/swagger-ui/#/reporting-controller/getUsingGET_1
 
 * read file
 ```
 curl --request GET --url http://<servername>:50000/reporting/file/<testcaseid>/<filename>
 ```
-Swagger: http://servername:50000/swagger-ui/#/reporting-controller/getFileUsingGET
 
 * search test case (read all with /reporting/search?labels=%25)
 ```
 curl --request GET --url 'http://<servername>:50000/reporting/search?labels=<yourlabel>&lastchecks=100'
 ```
-Swagger: http://servername:50000/swagger-ui/#/reporting-controller/searchUsingGET
 
 * list injects to trigger manually (must be activated)
 ```
 curl --request GET --url 'http://<servername>:50000/trigger/'
 ```
-Swagger: http://servername:50000/swagger-ui/#/trigger-controller/getUsingGET_2
 
 * trigger inject (must be activated)
 ```
 curl --request GET --url 'http://<servername>:50000/trigger/inject/<testcaseid>/<injectid>'
 ```
-Swagger: http://servername:50000/swagger-ui/#/trigger-controller/injectUsingGET
+
+* trigger data generation (inject must be activated)
+```
+curl -X POST "http://servername:50000/trigger/datagenerator" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"testId\":\"string\",\"injectId\":\"string\",\"count\":0}"
+```
 
 * read filtered log files
 ```
 curl --request GET --url 'http://<servername>:50000/reporting/log?filter=<yourfilter>&maxage=7'
 ```
-Swagger: http://servername:50000/swagger-ui/#/reporting-controller/logUsingGET
 
 * pause injects and checks
 ```
 curl --request GET --url 'http://<servername>:50000/trigger/pause/<true/false>'
 ```
-Swagger: http://servername:50000/swagger-ui/#/trigger-controller/pauseUsingGET
 
 
 ## Pipeline Integration / Bulk Execution
@@ -159,13 +159,11 @@ You can use this endpoints to realize a pipeline integration.
 ```
 curl -X POST "http://<servername>:50000/trigger/bulk/" -H "accept: application/json" -H "Content-Type: application/json" -d "[\"<testcaseid>.<injectid>\",\"<testcaseid>.*\"]"
 ```
-Swagger: http://servername:50000/swagger-ui/#/trigger-controller/bulkUsingPOST
 
 * bulk read check results
 ```
 curl -X GET "http://<servername>:50000/reporting/bulk?bulkid=<bulkid>" -H "accept: application/json"
 ```
-Swagger: http://servername:50000/swagger-ui/#/reporting-controller/bulkUsingGET
 
 
 ## Password Encryption
@@ -177,12 +175,10 @@ Simply use this endpoint to encrypt your passwords and use in your testcase:
 ```
 curl --request POST -H "Content-Type: text/plain; charset=utf-8" --url http://<servername>:50000/password/encrypt --data 'HalloWelt!123'
 ```
-Swagger: http://servername:50000/swagger-ui/#/password-controller/encryptUsingPOST
 
 ```
 curl --request POST -H "Content-Type: text/plain; charset=utf-8" --url http://<servername>:50000/password/decrypt --data 'ENC(e8K7wp7CusOAwpzCrMOBw5ltwpl6woQ=)'
 ```
-Swagger: http://servername:50000/swagger-ui/#/password-controller/decryptUsingPOST
 
 
 ## Development Environment
