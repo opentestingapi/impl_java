@@ -90,7 +90,7 @@ Please think about using a kind of folder structure to differ between functional
 
 ## API Usage
 
-Swagger-UI: http://<servername>:50000/swagger-ui/swagger-ui/index.html
+Swagger-UI: http://servername:50000/swagger-ui/api-docs.html
 
 
 1. upload required files first (please use application/json for all file types): 
