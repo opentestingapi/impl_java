@@ -15,7 +15,8 @@ Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentest
 | 1.6     | 1.0 | S3-Adapter, Swagger-UI bugfixes (content-type upload)                                                                                                        |
 | 1.7     | 1.0 | using relative path for Swagger-UI (simplifies proxy usage, for example https)                                                                               |
 | 1.8     | 1.0 | data generator endpoint to create mass data from testcases                                                                                                   |
-| 1.9     | 1.0 | dependency upgrades, CVE fix: https://github.com/aws/aws-sdk-java/security/advisories/GHSA-c28r-hw5m-5gv3                                                       |
+| 1.9     | 1.0 | dependency upgrades, CVE fix: https://github.com/aws/aws-sdk-java/security/advisories/GHSA-c28r-hw5m-5gv3                                                    |
+| 1.10    | 1.0 | endpoint to export all test cases                                                                                                                            |
 
 ## Architecture
 
