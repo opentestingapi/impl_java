@@ -18,7 +18,7 @@ Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentest
 | 1.9     | 1.0 | dependency upgrades, CVE fix: https://github.com/aws/aws-sdk-java/security/advisories/GHSA-c28r-hw5m-5gv3                                                    |
 | 1.10    | 1.0 | endpoint to export all test cases                                                                                                                            |
 | 1.11    | 1.0 | Kafka consumers not shared between test cases, they have to use different group.id (recreated with every upload)                                             |
-| 1.12    | 1.0 | Bugfix DELETE endpoind content-type                                                                                                                          |
+| 1.12    | 1.0 | Bugfix DELETE endpoint content-type                                                                                                                          |
 
 ## Architecture
 
