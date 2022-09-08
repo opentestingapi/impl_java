@@ -82,7 +82,7 @@ as this is transferred into subsequent injects and checks.
 
 ## Naming Rules / Storage
 
-IDs must be unique, please create a guideline for you test case creators.
+IDs must be unique, please create a guideline for your test case creators.
 
 * Tests for 1 application should be stored next to it
 * Tests for 1 department should be stored in a department repository
