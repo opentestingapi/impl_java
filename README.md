@@ -20,6 +20,8 @@ Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentest
 | 1.11    | 1.0 | Kafka consumers not shared between test cases, they have to use different group.id (recreated with every upload)                                             |
 | 1.12    | 1.0 | Bugfix DELETE endpoind content-type                                                                                                                          |
 | 1.13    | 1.0 | Replacement from subsequent injects stored in random data pool                                                                                               |
+| 1.14    | 1.0 | adding alias 'soap' to rest adapter                                                                                                                          |
+| 1.15    | 1.0 | adding 'senddelay' to REST/SOAP adapter, set Kafka 'senddelay' default to 0, use unblocking technical implementation                                         |
 
 ## Architecture
 
