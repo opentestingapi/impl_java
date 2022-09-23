@@ -22,6 +22,7 @@ Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentest
 | 1.13    | 1.0 | Replacement from subsequent injects stored in random data pool                                                                                               |
 | 1.14    | 1.0 | adding alias 'soap' to rest adapter                                                                                                                          |
 | 1.15    | 1.0 | YML support (testcase), adding 'senddelay' to REST/SOAP adapter, set Kafka 'senddelay' default to 0, use unblocking technical implementation                 |
+| 1.16    | 1.0 | Adding support to change Kafka reconnect backoff (kafka.reconnect.backoff.max.ms=60000, kafka.reconnect.backoff.ms=1000) |
 
 ## Architecture
 
