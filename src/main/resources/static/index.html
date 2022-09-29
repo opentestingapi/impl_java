@@ -70,6 +70,9 @@ input {
             document.getElementById('div3').style.height = h+'px';
         }
         function load() {
+            document.getElementById('div1').innerHTML = '';
+            document.getElementById('div2').innerHTML = '';
+            document.getElementById('div3').innerHTML = '<pre id="json-viewer"></pre>';
             var testid = document.getElementById('testid').value;
             //console.log( "testid: " + testid );
             //tree
@@ -78,7 +81,7 @@ input {
                 type: 'GET',
                 success: function(treedata) {
                     //console.log( "Tree Data: " + treedata );                
-                    document.getElementById('div1').innerHTML = '<pre>'+treedata+'</pre>';
+                    document.getElementById('div1').innerHTML = treedata;
                 }
             });
             //log  
@@ -97,14 +100,14 @@ input {
                     collapsed:true,
                     withQuotes:false
                 });
-            });                        
+            });                               
         }
     </script>
 </head>
 <body onload="resize()">
 <br>
 ID&nbsp;<input type="text" id="testid" name="testid"><input type="text" id="anzahl" name="anzahl" value="10" style="width: 40px;">
-<a href="#" class="clickme success" onclick="load()">[Load/Reload]</a>
+<a href="#" class="clickme success" onclick="load()">[Load/Refresh]</a>
 <a href="/swagger-ui/api-docs.html" target="_blank" class="clickme success">[Swagger-UI]</a>
 <a href="/v3/api-docs" target="_blank" class="clickme success">[API Docs]</a>
 <a href="/actuator/logfile" target="_blank" class="clickme success">[Logfile]</a>
