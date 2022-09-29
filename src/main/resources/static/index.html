@@ -4,6 +4,9 @@
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
+    <link href="js/jquery.json-viewer.css" rel="stylesheet">
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/jquery.json-viewer.js"></script>    
     <style>
 
 .clickme {
@@ -16,27 +19,113 @@
     cursor:pointer;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+td {
+  border: 1px solid black;
+  padding: 0;
+  margin: 0px;
+  overflow: auto;
+}
+
+div {
+  resize: both;
+  overflow: auto;
+  width: 800px;
+  height: 600px;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid black;
+  display:block;
+}
+
+td div {
+  border: 0;
+  width: auto;
+  height: auto;
+  min-height: 350px;
+  min-width: 350px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    height: 30px;
+}
+
     </style>
+    <script>
+        function resize() {
+            var w = window.innerWidth - 20;
+            var h = window.innerHeight - 100;
+            document.getElementById('div1').style.width = w/2+'px';
+            document.getElementById('div2').style.width = w/2+'px';
+            document.getElementById('div3').style.width = w/2+'px';
+            document.getElementById('div1').style.height = h/2+'px';
+            document.getElementById('div2').style.height = h/2+'px';
+            document.getElementById('div3').style.height = h+'px';
+        }
+        function load() {
+            var testid = document.getElementById('testid').value;
+            //console.log( "testid: " + testid );
+            //tree
+            $.ajax({
+                url: "/reporting/testtree/"+testid,
+                type: 'GET',
+                success: function(treedata) {
+                    //console.log( "Tree Data: " + treedata );                
+                    document.getElementById('div1').innerHTML = '<pre>'+treedata+'</pre>';
+                }
+            });
+            //log  
+            $.ajax({
+                url: "/reporting/log?maxage=1&filter="+testid,
+                type: 'GET',
+                success: function(logdata) {
+                    //console.log( "Log Data: " + logdata );                
+                    document.getElementById('div2').innerHTML = '<pre>'+logdata+'</pre>';
+                }
+            });        
+            //export: https://www.jqueryscript.net/other/jQuery-Plugin-For-Easily-Readable-JSON-Data-Viewer.html
+            $.getJSON( "/reporting/test/"+testid+"?lastchecks="+document.getElementById('anzahl').value, function( json ) {
+                //console.log( "JSON Data: " + json );
+                $('#json-viewer').jsonViewer(json, {
+                    collapsed:true,
+                    withQuotes:false
+                });
+            });                        
+        }
+    </script>
 </head>
-<body>
-<h1>OpenTestingApi</h1>
-<a href="https://opentestingapi.github.io/" target="_blank" class="clickme success">Website</a>
-<a href="https://github.com/opentestingapi/impl_java" target="_blank" class="clickme success">Github</a>
-<a href="https://github.com/opentestingapi/impl_java/releases" target="_blank" class="clickme success">Releases</a>
-<a href="https://github.com/opentestingapi/impl_java/pkgs/container/opentesting" target="_blank" class="clickme success">Container</a>
-<h3>Instance</h3>
-<a href="/swagger-ui/api-docs.html" target="_blank" class="clickme success">Swagger-UI</a>
-<a href="/v3/api-docs" target="_blank" class="clickme success">API Docs</a>
-<a href="/actuator/logfile" target="_blank" class="clickme success">Logfile</a>
-<a href="/actuator" target="_blank" class="clickme success">Actuator</a>
+<body onload="resize()">
+<br>
+ID&nbsp;<input type="text" id="testid" name="testid"><input type="text" id="anzahl" name="anzahl" value="10" style="width: 40px;">
+<a href="#" class="clickme success" onclick="load()">[Load/Reload]</a>
+<a href="/swagger-ui/api-docs.html" target="_blank" class="clickme success">[Swagger-UI]</a>
+<a href="/v3/api-docs" target="_blank" class="clickme success">[API Docs]</a>
+<a href="/actuator/logfile" target="_blank" class="clickme success">[Logfile]</a>
+<a href="/actuator" target="_blank" class="clickme success">[Actuator]</a>
+<a href="/README.html" target="_blank" class="clickme success">[README]</a>
+<!--a href="/template/dashboard" target="_blank" class="clickme success">[Grafana Dashboard JSON]</a>
+<a href="/template/testcase" target="_blank" class="clickme success">[Test Case Template]</a>
+<a href="/template/jsonschema" target="_blank" class="clickme success">[Test Case JSON Schema]</a-->
+<a href="https://opentestingapi.github.io/" target="_blank" class="clickme success">[Web]</a>
+<a href="https://github.com/opentestingapi/impl_java" target="_blank" class="clickme success">[Github]</a>
+<a href="https://github.com/opentestingapi/impl_java/releases" target="_blank" class="clickme success">[Releases]</a>
+<a href="https://github.com/opentestingapi/impl_java/pkgs/container/opentesting" target="_blank" class="clickme success">[Container]</a>
 <br><br>
-<h3>Downloads</h3>
-<a href="/template/dashboard" target="_blank" class="clickme success">Grafana Dashboard JSON</a>
-<a href="/template/testcase" target="_blank" class="clickme success">Test Case Template</a>
-<a href="/template/jsonschema" target="_blank" class="clickme success">Test Case JSON Schema</a>
-<br><br>
-<h3>Markdown (linked resources might fail)</h3>
-<a href="/README.html" target="_blank" class="clickme success">README</a>
-<br><br>
+<table>
+    <tr>
+      <td><div id="div1">please enter test case id</div></td>
+      <td rowspan="2"><div style="height:700" id="div3"><pre id="json-viewer"></pre></div></td>      
+    </tr>
+    <tr>
+      <td><div id="div2"></div></td>     
+    </tr>    
+  </table>
 </body>
 </html>

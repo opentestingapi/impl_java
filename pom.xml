@@ -11,14 +11,14 @@
 	</parent>
 	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>1.15</version>
+	<version>1.17</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
 	<properties>
 		<java.version>11</java.version>
 		<cassandra.version>3.11.2</cassandra.version>
-		<aws.sdk.version>1.12.262</aws.sdk.version>
+		<aws.sdk.version>1.12.311</aws.sdk.version>
 		<springdoc.version>1.6.9</springdoc.version>	
 		<spring.cloud.version>3.1.1</spring.cloud.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
@@ -27,7 +27,7 @@
 		<brave-instrumentation-kafka-clients>5.13.10</brave-instrumentation-kafka-clients>		
 		<json-schema-validator>1.0.71</json-schema-validator>
 		<testcontainers.version>1.17.3</testcontainers.version>
-		<jib-maven-plugin.version>3.2.1</jib-maven-plugin.version>
+		<jib-maven-plugin.version>3.3.0</jib-maven-plugin.version>
 	</properties>
 
 	<dependencies>
