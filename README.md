@@ -8,7 +8,7 @@ Changelog: [CHANGELOG](CHANGELOG.md)
 
 ## Architecture
 
-![arch diagram](architecture/e2e-tests.png?raw=true "Architecture")
+![arch diagram](architecture/ota.drawio.svg?raw=true "Architecture")
 
 
 ## Java and Spring Boot?
