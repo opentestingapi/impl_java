@@ -19,3 +19,4 @@
 | 1.16    | 1.0 | Adding support to change Kafka reconnect backoff (kafka.reconnect.backoff.max.ms=60000, kafka.reconnect.backoff.ms=1000) |
 | 1.17    | 1.0 | improved upload output, new GUI to analyze test cases, AWS SDK update |
 | 1.18    | 1.0 | feature flag to disable kafka expacted vs actual log, add testid and checkid to this log |
+| 1.19    | 1.0 | support parallel execution with bulk trigger |
