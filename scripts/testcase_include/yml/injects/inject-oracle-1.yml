@@ -1,0 +1,14 @@
+  - injectid: inject-oracle-1
+    cron: []
+    active: true
+    service:
+      type: oracle
+      connectstring: 'jdbc:oracle:thin:@host.testcontainers.internal:1521/XE'
+      username: e2etest
+      password: e2etest
+    sourcefile: source_oracle_1.sql
+    timetolive: 1m
+    checks:
+      - check-oracle-1
+    replacements:
+      !include replacements/replacements-1.yml    

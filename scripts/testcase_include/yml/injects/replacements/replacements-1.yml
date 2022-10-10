@@ -1,0 +1,19 @@
+      - key: '#replaceme1#'
+        value:
+          - order: 1
+            type: list
+            value: rep11|rep12|rep13
+      - key: '#replaceme2#'
+        value:
+          - order: 1
+            type: list
+            value: rep21|rep22|rep23|rep24
+          - order: 2
+            type: now
+            value: Q
+        maxlength: 10
+      - key: '#replaceme3#'
+        value:
+          - order: 3
+            type: regex
+            value: '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'

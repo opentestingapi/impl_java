@@ -1,0 +1,13 @@
+id: oracle_001
+testapi: '1.0'
+active: true
+description: oracle test case
+labels:
+  - stage-local
+  - department-mydepartment
+  - function-myfunction
+injections:
+  !include injects/inject-oracle-1.yml
+  !include injects/inject-oracle-2.yml
+checks:
+  !include checks/check-oracle-1.yml

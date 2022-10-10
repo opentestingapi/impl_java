@@ -1,0 +1,15 @@
+  - checkid: check-oracle-1
+    active: true
+    service:
+      type: jdbc
+      connectstring: 'jdbc:oracle:thin:@host.testcontainers.internal:1521/XE'
+      username: e2etest
+      password: e2etest
+    validations:
+      - order: 1
+        request: check_oracle_param_1.sql
+        response:
+          - check_oracle_1.json
+        type: equals
+    maxwaittime: 10s
+    mandatory: true

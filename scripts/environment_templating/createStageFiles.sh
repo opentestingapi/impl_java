@@ -7,7 +7,7 @@
 rm -rf stagefiles
 mkdir stagefiles
 #extend template files here...
-for template in test_00005
+for template in test
 do
     #extend stages here...
     for stage in LOCAL DEV

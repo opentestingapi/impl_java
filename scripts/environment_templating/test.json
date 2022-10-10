@@ -1,0 +1,82 @@
+{
+   "id" : "test_#STAGE#",
+   "testapi": "1.0",
+   "active" : true,
+   "description" : "oracle test case",
+   "labels" : ["stage-#STAGE#", "department-mydepartment", "function-myfunction"],    
+   "injections" : [
+    {
+       "injectid": "inject-oracle-1",
+       "cron" : [],
+       "active" : true,
+       "service" : {
+           "type": "oracle",
+           "connectstring": "jdbc:oracle:thin:@#ORACLE_SERVER#:#ORACLE_PORT#/XE",
+           "username": "e2etest",
+           "password": "e2etest"
+       },       
+       "sourcefile" : "source_oracle_1.sql",
+       "timetolive": "1m",
+       "checks" : [ "check-oracle-1" ],
+       "replacements" : [
+        {
+           "key": "#replaceme1#",
+           "value": [
+              {
+                 "order": 1,
+                 "type": "list",
+                 "value": "rep11|rep12|rep13"
+              }
+           ]
+         },
+         {
+            "key": "#replaceme2#",
+            "value": [
+               {
+                  "order": 1,
+                  "type": "list",
+                  "value": "rep21|rep22|rep23|rep24"
+               },
+               {
+                  "order": 2,
+                  "type": "now",
+                  "value": "Q"
+               }
+            ],
+            "maxlength": 10
+          },
+          {
+            "key": "#replaceme3#",
+            "value": [
+               {
+                  "order": 3,
+                  "type": "regex",
+                  "value": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+               }
+            ]
+          }  
+      ]
+     }
+   ],
+   "checks": [
+    {   
+       "checkid" : "check-oracle-1",  
+       "active" : true,
+       "service" : {
+           "type": "jdbc",
+           "connectstring": "jdbc:oracle:thin:@#ORACLE_SERVER#:#ORACLE_PORT#/XE",
+           "username": "e2etest",
+           "password": "e2etest"
+        },
+        "validations": [
+        {
+           "order": 1,
+           "request": "check_oracle_param_1.sql",
+           "response": [ "check_oracle_1.json" ],
+           "type": "equals"
+        }],
+       "maxwaittime" : "10s",
+       "mandatory" : true
+    }
+   ]
+ }
