@@ -281,6 +281,10 @@ Info / Metrics / Log / everything else:
 <http://servername:50000/>
 
 
-## Templating
+## Environemt Templating (script based)
 
-[Example](scripts/json_template/)
+[environment_templating](scripts/environment_templating/)
+
+## Use Includes for JSON/YML (script based)
+
+[testcase_include](scripts/testcase_include/)

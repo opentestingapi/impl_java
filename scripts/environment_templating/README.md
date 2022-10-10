@@ -1,4 +1,4 @@
-# JSON templating example using shell commands
+# environment templating example using shell commands
 
 #1 add stage values into stageProperties.sh
 
