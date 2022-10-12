@@ -32,12 +32,12 @@ We would like to make it as easy as possible to extend and to fork the project, 
 ## How to upload a test case?
 
 Let's take an example with an input file and the test case:
-* myfile1.json
+* myfile1.txt
 * test1.json
 
 Here are the commands to upload them:
 ```
-curl -X POST "http://localhost:50000/upload/file/<testid>/myfile1.json" -H "accept: */*" -H "Content-Type: text/plain" --data-binary @myfile1.json && echo
+curl -X POST "http://localhost:50000/upload/file/<testid>/myfile1.txt" -H "accept: */*" -H "Content-Type: text/plain" --data-binary @myfile1.txt && echo
 curl -X POST "http://localhost:50000/upload/test" -H "accept: */*" -H "Content-Type: application/json" -d @test1.json && echo
 ```
 
