@@ -247,7 +247,7 @@ Local build and Container creation (you might want to use your own tags and repo
 
 You should run this tool as a container (maybe with network host if you want to test local services):
 
-local
+local (it might be a good idea to use --net=host locally instead of -p to access ressources with 'localhost')
 ```
 docker run -d -p 50000:50000 --name=opentesting --restart=always ghcr.io/opentestingapi/opentesting:latest
 ```
