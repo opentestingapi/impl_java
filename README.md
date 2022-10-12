@@ -42,7 +42,7 @@ curl -X POST "http://localhost:50000/upload/test" -H "accept: */*" -H "Content-T
 ```
 
 Injects could be triggered by:
-* cron configuration with test case
+* cron configuration within test case
 * using our GUI (http://localhost:50000/)
 * using the API endpoints
 
