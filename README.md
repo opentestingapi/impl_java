@@ -56,6 +56,23 @@ Injects could be triggered by:
 [testcase_include](scripts/testcase_include/)
 
 
+## Examples
+
+[Hello World](src/test/resources/opentesting/other/local_test_helloworld.json)
+
+[Complex Example](src/test/resources/opentesting/other/local_test_00001/test.json)
+
+test cases from the implementation itself:
+
+[Systemtests](src/test/resources/opentesting/systemtests/) - used for automatic adapter testing (1 technology used only)
+
+generic test case example:
+
+[Template](src/main/resources/templates/templatetest.json)
+
+<http://servername:50000/template/testcase>
+
+
 ## Adapters
 
 the following adapters could be used:
@@ -274,23 +291,6 @@ sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cp
 |OPENTESTING_RESTTIMEOUT   |30   |timeout for HTTP(S) request, for example JWT receiver   |
 |OPENTESTING_SALT   |   |instance specific salt for password encryption   |
 |OPENTESTING_USELOCK   |true   |use a cache to avoid user locks because of wrong credentials   |
-
-
-## Examples
-
-Test Case Template:
-
-[Template](src/main/resources/templates/templatetest.json)
-
-<http://servername:50000/template/testcase>
-
-Example Test Cases:
-
-[Hello World Example](src/test/resources/opentesting/other/local_test_helloworld.json)
-
-[Systemtests](src/test/resources/opentesting/systemtests/) - used for automatic adapter testing (1 technology used only)
-
-[Complex Example](src/test/resources/opentesting/other/local_test_00001/test.json)
 
 
 ## Utilities
