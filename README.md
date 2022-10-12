@@ -37,7 +37,7 @@ Let's take an example with an input file and the test case:
 
 Here are the commands to upload them:
 ```
-curl -X POST "http://localhost:50000/upload/file/random_file_test/randomfile.txt" -H "accept: */*" -H "Content-Type: text/plain" --data-binary @myfile1.txt && echo
+curl -X POST "http://localhost:50000/upload/file/<testid>/myfile1.json" -H "accept: */*" -H "Content-Type: text/plain" --data-binary @myfile1.json && echo
 curl -X POST "http://localhost:50000/upload/test" -H "accept: */*" -H "Content-Type: application/json" -d @test1.json && echo
 ```
 
