@@ -288,9 +288,9 @@ Example Test Cases:
 
 [Hello World Example](src/test/resources/opentesting/other/local_test_helloworld.json)
 
-[Complex Example](src/test/resources/opentesting/other/local_test_00001/test.json)
+[Systemtests](src/test/resources/opentesting/systemtests/) - used for automatic adapter testing (1 technology used only)
 
-[Systemtests](src/test/resources/opentesting/systemtests/) - used for automatic adapter testing
+[Complex Example](src/test/resources/opentesting/other/local_test_00001/test.json)
 
 
 ## Utilities
