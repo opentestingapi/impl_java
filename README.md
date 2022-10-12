@@ -29,6 +29,33 @@ We would like to make it as easy as possible to extend and to fork the project, 
 * Container usage preferred
 
 
+## How to upload a test case?
+
+Let's take an example with an input file and the test case:
+* myfile1.json
+* test1.json
+
+Here are the commands to upload them:
+```
+curl -X POST "http://localhost:50000/upload/file/random_file_test/randomfile.txt" -H "accept: */*" -H "Content-Type: text/plain" --data-binary @myfile1.txt && echo
+curl -X POST "http://localhost:50000/upload/test" -H "accept: */*" -H "Content-Type: application/json" -d @test1.json && echo
+```
+
+Injects could be triggered by:
+* cron configuration with test case
+* using our GUI (http://localhost:50000/)
+* using the API endpoints
+
+
+### Environemt Templating (script based)
+
+[environment_templating](scripts/environment_templating/)
+
+### Use Includes for JSON/YML (script based)
+
+[testcase_include](scripts/testcase_include/)
+
+
 ## Adapters
 
 the following adapters could be used:
@@ -178,7 +205,7 @@ curl --request POST -H "Content-Type: text/plain; charset=utf-8" --url http://<s
 Local development environment could be started with docker-compose, please check content in folder dev_env.
 
 
-### Build (JDK 11 preinstalled in Visual-Studio-Server)
+### Build (JDK 11)
 
 Local build:
 
@@ -278,15 +305,6 @@ Swagger:
 
 <http://servername:50000/swagger-ui/>
 
-Info / Metrics / Log / everything else:
+Dashboard / Info / Metrics / Log / everything else:
 
 <http://servername:50000/>
-
-
-## Environemt Templating (script based)
-
-[environment_templating](scripts/environment_templating/)
-
-## Use Includes for JSON/YML (script based)
-
-[testcase_include](scripts/testcase_include/)
