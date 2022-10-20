@@ -16,6 +16,8 @@ kafka:
       max:
         ms: 60000
       ms: 1000
+  producer:
+    acks: 1
 
 app:
   version: ^project.version^
