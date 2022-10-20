@@ -20,3 +20,4 @@
 | 1.17    | 1.0 | improved upload output, new GUI to analyze test cases, AWS SDK update |
 | 1.18    | 1.0 | feature flag to disable kafka expacted vs actual log, add testid and checkid to this log |
 | 1.19    | 1.0 | support parallel execution with bulk trigger |
+| 1.20    | 1.0 | define Kafka consumer and producer properties with custom parameters, print testid with exception for Kafka DelayedSender |
