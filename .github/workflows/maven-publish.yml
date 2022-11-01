@@ -3,10 +3,9 @@
 
 name: Maven Package
 
-#on:
-#  release:
-#    types: [created]
-on: push
+on:
+  release:
+    types: [created]
 
 jobs:
   build:
@@ -52,10 +51,4 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: ghcr.io/opentestingapi/opentesting:latest
-
-    #- name: Build Multi-Arch Container
-      #run: docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/opentesting:${GITHUB_REF##*/} . && docker push ghcr.io/opentesting:${GITHUB_REF##*/}
-      #run: docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/opentesting:latest . && docker push ghcr.io/opentesting:latest
-      #env:
-        #GITHUB_TOKEN: ${{ github.token }}
+        tags: ghcr.io/opentestingapi/opentesting:${GITHUB_REF##*/}
