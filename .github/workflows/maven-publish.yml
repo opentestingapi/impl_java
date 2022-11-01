@@ -15,6 +15,10 @@ jobs:
       packages: write
 
     steps:
+    - uses: actions/checkout@v3
+
+    - id: docker-tag
+      uses: yuya-takeyama/docker-tag-from-github-ref-action@v1
 
     - name: Version
-      run: echo ${{ env.TAG }}
+      run: echo ${{ steps.docker-tag.outputs.tag }}
