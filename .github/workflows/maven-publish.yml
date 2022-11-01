@@ -46,6 +46,6 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build Multi-Arch Container
-      run: docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/opentesting:${GITHUB_REF##*/} --push .
+      run: docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/opentesting:${GITHUB_REF##*/} . && docker push ghcr.io/opentesting:${GITHUB_REF##*/}
       env:
         GITHUB_TOKEN: ${{ github.token }}
