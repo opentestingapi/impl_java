@@ -51,4 +51,4 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: ghcr.io/opentestingapi/opentesting:${GITHUB_REF##*/}
+        tags: ghcr.io/opentestingapi/opentesting:${{ GITHUB_REF##*/ }}
