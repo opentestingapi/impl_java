@@ -36,9 +36,6 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Version
-      run: echo ${GITHUB_REF##*/}
-
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
 
@@ -47,6 +44,9 @@ jobs:
 
     - id: docker-tag
       uses: yuya-takeyama/docker-tag-from-github-ref-action@v1
+
+    - name: Version
+      run: echo ${{ steps.docker-tag.outputs.tag }}
     
     - name: Build and push
       uses: docker/build-push-action@v3
