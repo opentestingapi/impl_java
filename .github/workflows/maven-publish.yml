@@ -26,7 +26,7 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build with Maven
-      run: mvn clean install jib:dockerBuild
+      run: mvn clean install
       
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v1
@@ -37,6 +37,17 @@ jobs:
 
     - name: Version
       run: echo ${GITHUB_REF##*/}
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build Multi-Arch Container
+      run: docker buildx build --platform linux/amd64,linux/arm64 -t opentesting:latest .
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
     
     - name: Tag opentesting:latest
       run: docker tag opentesting:latest ghcr.io/opentestingapi/opentesting:latest

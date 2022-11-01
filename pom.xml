@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>1.21</version>
+	<version>1.22</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
@@ -27,7 +27,6 @@
 		<brave-instrumentation-kafka-clients>5.13.10</brave-instrumentation-kafka-clients>		
 		<json-schema-validator>1.0.71</json-schema-validator>
 		<testcontainers.version>1.17.3</testcontainers.version>
-		<jib-maven-plugin.version>3.3.0</jib-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -267,31 +266,6 @@
 					<copyDirectories>architecture,src/main/resources/templates,examples</copyDirectories>
 				</configuration>
 			</plugin>
-			<!-- build container using JIB -->
-            <plugin>
-		        <groupId>com.google.cloud.tools</groupId>
-		        <artifactId>jib-maven-plugin</artifactId>
-				<version>${jib-maven-plugin.version}</version>
-		        <configuration>
-		          <from>				    
-				    <image>openjdk:11-jre-slim</image>
-				  </from>
-		          <to>
-		            <image>opentesting:latest</image>		            			    
-		          </to>		          
-		          <container>
-				    <jvmFlags>
-					  <jvmFlag>-XX:+UseContainerSupport</jvmFlag>
-					  <!-- UseContainerSupport: default, but we shoud set explicitly -->
-				      <!--PROBLEM FOR LOCAL ENV AS DOCKER_COMPOSE LIMITS IGNORED jvmFlag>-XX:MaxRAMPercentage=75.0</jvmFlag-->
-					  <!-- MaxRAMPercentage: for container with more than 256 MB RAM, otherwise use MinRAMPercentage -->
-					  <!--PROBLEM FOR LOCAL ENV AS DOCKER_COMPOSE LIMITS IGNORED jvmFlag>-XX:InitialRAMPercentage=75.0</jvmFlag-->
-					  <!-- InitialRAMPercentage: use max as this is easier for JVM GC and will fail during startup not during load -->					  
-				    </jvmFlags>
-				    <mainClass>org.opentesting.OpenTestingApplication</mainClass>
-				  </container>	
-		        </configuration>           
-		    </plugin>
 		</plugins>
 	</build>
 
