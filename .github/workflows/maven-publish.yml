@@ -3,11 +3,9 @@
 
 name: Maven Package
 
-#on:
-#  release:
-#    types: [created]
-on: 
-  push
+on:
+  release:
+    types: [created]
 
 jobs:
   build:
@@ -53,4 +51,4 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: ghcr.io/opentestingapi/opentesting:${{ GITHUB_REF##*/ }}
+        tags: ghcr.io/opentestingapi/opentesting:1.22
