@@ -23,3 +23,4 @@
 | 1.20    | 1.0 | define Kafka consumer and producer properties with custom parameters, print testid with exception for Kafka DelayedSender |
 | 1.21    | 1.0 | added testid for Kafka consumer error output and various Readme changes, additional test case for Kafka properties |
 | 1.22    | 1.0 | multi architecture docker build |
+| 1.23    | 1.0 | using Jackson JavaPropsMapper to grant access to more result2random values |
