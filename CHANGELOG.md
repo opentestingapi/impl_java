@@ -25,3 +25,4 @@
 | 1.22    | 1.0 | multi architecture docker build |
 | 1.23    | 1.0 | using Jackson JavaPropsMapper to grant access to more result2random values |
 | 1.24    | 1.0 | bugfix tracing for delayed REST sender, fix JSON serialization/deserialization |
+| 1.25    | 1.0 | bugfix 1.24 Kafka connectivity String cast (testversion) |
