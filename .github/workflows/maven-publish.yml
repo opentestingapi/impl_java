@@ -54,4 +54,4 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: ghcr.io/opentestingapi/opentesting:latest,ghcr.io/opentestingapi/opentesting:${{ steps.docker-tag.outputs.tag }}
+        tags: ghcr.io/opentestingapi/opentesting:${{ steps.docker-tag.outputs.tag }}
