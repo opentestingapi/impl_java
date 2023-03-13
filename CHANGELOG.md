@@ -26,3 +26,4 @@
 | 1.23    | 1.0 | using Jackson JavaPropsMapper to grant access to more result2random values |
 | 1.24    | 1.0 | bugfix tracing for delayed REST sender, fix JSON serialization/deserialization |
 | 1.25    | 1.0 | bugfix 1.24 Kafka connectivity String cast (testversion) |
+| 1.26    | 1.1 | API 1.1: regex and jsonschema logic for checks |
