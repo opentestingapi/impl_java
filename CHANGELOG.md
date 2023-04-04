@@ -29,3 +29,4 @@
 | 1.26    | 1.1 | API 1.1: regex and jsonschema logic for checks |
 | 1.27    | 1.1 | new structure dataextraction with header support, result2random deprecated |
 | 1.28    | 1.1 | adding empty and random payload support for header extraction using dataextraction |
+| 1.29    | 1.1 | Bugfix: need to lock check for execution, if exec itself takes more time than cron interval |
