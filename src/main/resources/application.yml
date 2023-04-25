@@ -36,11 +36,11 @@ server:
 
 spring:
   application:
-    name: opentesting  
+    name: opentesting
   datasource:
     driver-class-name: org.h2.Driver
     username: sa
-    password: password    
+    password: password
     url: jdbc:h2:file:/tmp/testcasedb;DB_CLOSE_ON_EXIT=FALSE;mode=PostgreSQL
     #driver-class-name: org.postgresql.Driver
     #username: postgres
