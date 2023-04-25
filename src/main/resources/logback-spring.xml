@@ -22,7 +22,7 @@
 
         <rollingPolicy
             class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily and when the file reaches 1 MegaByte -->
+            <!-- rollover daily and when the file reaches 10 MegaByte -->
             <fileNamePattern>${LOGS}/opentesting-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <!-- keep 31 days' worth of history -->
@@ -30,7 +30,7 @@
             <totalSizeCap>1024MB</totalSizeCap>
             <timeBasedFileNamingAndTriggeringPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>1MB</maxFileSize>                
+                <maxFileSize>10MB</maxFileSize>                
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
     </appender>
