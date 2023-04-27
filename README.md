@@ -19,7 +19,6 @@ Changelog: [CHANGELOG](CHANGELOG.md)
 ## Grafana
 
 ![grafana1](images/grafana1.png "Grafana1")
-
 ![grafana2](images/grafana2.png "Grafana2")
 
 ## Java and Spring Boot?
