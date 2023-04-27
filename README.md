@@ -218,7 +218,10 @@ curl -X POST "http://<servername>:50000/trigger/bulk/" -H "accept: application/j
 * bulk read check results
 ```
 curl -X GET "http://<servername>:50000/reporting/bulk?bulkid=<bulkid>" -H "accept: application/json"
+
 ```
+
+Here you can find our JUnit integration example: https://github.com/opentestingapi/impl_java_testcontainers
 
 
 ## Password Encryption
