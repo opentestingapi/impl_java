@@ -16,6 +16,12 @@ Changelog: [CHANGELOG](CHANGELOG.md)
 
 ![gui](images/gui.png "GUI")
 
+## Grafana
+
+![grafana1](images/grafana1.png "Grafana1")
+
+![grafana2](images/grafana2.png "Grafana2")
+
 ## Java and Spring Boot?
 
 We would like to make it as easy as possible to extend and to fork the project, so we used commonly used technologies.
