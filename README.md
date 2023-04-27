@@ -8,6 +8,8 @@ Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentest
 
 Changelog: [CHANGELOG](CHANGELOG.md)
 
+JUnit Integration:   https://github.com/opentestingapi/impl_java_testcontainers
+
 ## Architecture
 
 ![arch diagram](architecture/ota.drawio.svg?raw=true "Architecture")
