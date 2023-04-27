@@ -12,6 +12,9 @@ Changelog: [CHANGELOG](CHANGELOG.md)
 
 ![arch diagram](architecture/ota.drawio.svg?raw=true "Architecture")
 
+## GUI
+
+![gui](images/gui.png "GUI")
 
 ## Java and Spring Boot?
 
