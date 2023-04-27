@@ -169,6 +169,11 @@ curl -X POST "http://<servername>:50000/upload/test" -H "accept: */*" -H "Conten
 curl --request DELETE --url http://<servername>:50000/upload/test/<testcaseid>
 ```
 
+* read all test case
+```
+curl --request GET --url 'http://<servername>:50000/reporting/test'
+```
+
 * read test case
 ```
 curl --request GET --url 'http://<servername>:50000/reporting/test/<testcaseid>?lastchecks=100'
@@ -179,9 +184,14 @@ curl --request GET --url 'http://<servername>:50000/reporting/test/<testcaseid>?
 curl --request GET --url http://<servername>:50000/reporting/file/<testcaseid>/<filename>
 ```
 
-* search test case (read all with /reporting/search?labels=%25)
+* search test case
 ```
 curl --request GET --url 'http://<servername>:50000/reporting/search?labels=<yourlabel>&lastchecks=100'
+```
+
+* test tree (graphical display of test case logic)
+```
+curl --request GET --url 'http://<servername>:50000/reporting/testtree/<testcaseid>'
 ```
 
 * list injects to trigger manually (must be activated)
