@@ -22,7 +22,7 @@ Before we get started, here are a few things we expect from you (and that you sh
 
 ## How to contribute
 
-* Backlog check / creation of the idea/bug/whatever
+* Backlog check / creation of the idea / bug / whatever
 * Create your branch and do it, do not forget test cases
 * Test it ('mvn test' and 'mvn clean install -Psystemtest')
 * Check Sonar - we do expect no bugs, vulnerabilities and severity with Major or above
