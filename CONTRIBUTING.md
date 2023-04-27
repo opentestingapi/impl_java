@@ -9,7 +9,6 @@ We've put together the following guidelines to help you figure out where you can
 0. [Ground rules & expectations](#ground-rules--expectations)
 0. [How to contribute](#how-to-contribute)
 0. [Setting up your environment](#setting-up-your-environment)
-0. [Community](#community)
 
 ## Ground rules & expectations
 
