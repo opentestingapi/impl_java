@@ -16,6 +16,8 @@ Changelog: [CHANGELOG](CHANGELOG.md)
 
 ![gui](images/gui.png "GUI")
 
+test case: https://github.com/opentestingapi/impl_java/tree/master/src/test/resources/opentesting/systemtests/rest_001_yml
+
 ## Grafana
 
 ![grafana1](images/grafana1.png "Grafana1")
