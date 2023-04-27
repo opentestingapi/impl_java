@@ -230,7 +230,9 @@ curl --request POST -H "Content-Type: text/plain; charset=utf-8" --url http://<s
 
 ## Development Environment
 
-Local development environment could be started with docker-compose, please check content in folder dev_env.
+Local development environment could be started running a simple Java main method (powered by Testcontainers).
+
+https://github.com/opentestingapi/impl_java/tree/master/src/test/java/org/opentesting/devenv#development-environment
 
 
 ### Build (JDK 11)
@@ -247,11 +249,7 @@ Local build and Run (please start local environment PostGre or configure H2):
 ./run.sh
 ```
 
-Local build and Container creation (you might want to use your own tags and repositories):
-
-```
-./build.sh
-```
+Local build and Container creation could be done using the Dockerfile.
 
 
 ## Container Usage / Environment Variables
