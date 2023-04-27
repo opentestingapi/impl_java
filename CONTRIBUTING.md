@@ -17,7 +17,7 @@ Before we get started, here are a few things we expect from you (and that you sh
 * Be kind and thoughtful in your conversations around this project. We all come from different backgrounds and projects, which means we likely have different perspectives on "how open source is done." Try to listen to others rather than convince them that your way is correct.
 * Check our backlog, maybe we are already working on it or the idea was already declined because of an reason. https://github.com/opentestingapi/backlog
 * Please ensure that your contribution passes all tests if you open a pull request. If there are test failures, you will need to address them before we can merge your contribution.
-* Think about our users when doint technology upgrades - we might have users running older infrastructure - this is not an invitation to sleep through upgrades, but we need to pay attention to compatibility and information transparency.
+* Think about our users when doing technology upgrades - we might have users running older infrastructure - this is not an invitation to sleep through upgrades, but we need to pay attention to compatibility and information transparency.
 * When adding content, please consider if it is widely valuable. Please don't add references or links to things you or your employer have created, as others will do so if they appreciate it.
 
 ## How to contribute
