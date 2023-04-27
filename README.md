@@ -189,7 +189,7 @@ curl --request GET --url http://<servername>:50000/reporting/file/<testcaseid>/<
 curl --request GET --url 'http://<servername>:50000/reporting/search?labels=<yourlabel>&lastchecks=100'
 ```
 
-* test tree (graphical display of test case logic)
+* test tree (graphical display of test case logic for browser)
 ```
 curl --request GET --url 'http://<servername>:50000/reporting/testtree/<testcaseid>'
 ```
