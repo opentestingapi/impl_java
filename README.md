@@ -279,7 +279,7 @@ docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2
 
 use external PostGre instead of internal H2 database
 ```
-sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" \
+docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" \
     -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" \
     -e "SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver" \
     -e "SPRING_DATASOURCE_USERNAME=<user>" \
@@ -290,7 +290,7 @@ sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cp
 
 integrate with Sleuth / Zipkin Tracing (default sampling rate 0.0)
 ```
-sudo docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" \
+docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" \
     -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" \
     -e "SPRING_SLEUTH_SAMPLER_PERCENTAGE=1.0" \
     -e "SPRING_ZIPKIN_BASEURL=<zipkinserver>" \
