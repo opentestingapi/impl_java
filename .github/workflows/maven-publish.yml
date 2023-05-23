@@ -52,6 +52,6 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: .
-        platforms: linux/amd64,linux/arm64v8
+        platforms: amd64,arm64v8
         push: true
         tags: ghcr.io/opentestingapi/opentesting:${{ steps.docker-tag.outputs.tag }}
