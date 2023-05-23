@@ -54,11 +54,6 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
-  sleuth:
-    async:
-      enabled: false
-    sampler:
-      percentage: 0.0
   zipkin:
     service:
       name: opentesting
@@ -74,6 +69,9 @@ management:
     web:
       exposure:
         include: health, info, logfile, metrics, prometheus
+  tracing:
+    sampling:
+      probability: 0.0
 
 logging:
   file:
