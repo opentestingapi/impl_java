@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
+FROM eclipse-temurin:17-jre-alpine
 
 # copy files
 COPY target/impl_java.jar /app/impl_java.jar
