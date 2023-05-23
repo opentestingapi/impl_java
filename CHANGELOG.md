@@ -31,3 +31,4 @@
 | 1.28    | 1.1 | adding empty and random payload support for header extraction using dataextraction |
 | 1.29    | 1.1 | Bugfix: need to lock check for execution, if exec itself takes more time than cron interval |
 | 1.30    | 1.1 | closing all kafka consumers with test case upload (changed group.id is allowed) |
+| 1.31    | 1.1 | JDK 17, Spring Boot 3.1, library updates, image updates |
