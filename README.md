@@ -302,11 +302,11 @@ docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2
     ghcr.io/opentestingapi/opentesting:latest
 ```
 
-integrate with Sleuth / Zipkin Tracing (default sampling rate 0.0)
+integrate with Zipkin Tracing (default sampling rate 0.0)
 ```
 docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2" \
     -e "JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=75.0" \
-    -e "SPRING_SLEUTH_SAMPLER_PERCENTAGE=1.0" \
+    -e "MANAGEMENT_TRACING_SAMPLING_PROBABILITY=1.0" \
     -e "SPRING_ZIPKIN_BASEURL=<zipkinserver>" \
     ghcr.io/opentestingapi/opentesting:latest
 ```
