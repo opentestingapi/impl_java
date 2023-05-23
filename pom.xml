@@ -5,28 +5,26 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<!-- many companies are working with Kafka 2.8.1, higher version are not supporting this -->
-		<version>2.6.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>3.1.0</version>
+		<relativePath/>
 	</parent>
 	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>1.30</version>
+	<version>1.31</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
 	<properties>
-		<java.version>11</java.version>
-		<cassandra.version>3.11.2</cassandra.version>
-		<aws.sdk.version>1.12.311</aws.sdk.version>
-		<springdoc.version>1.6.9</springdoc.version>	
-		<spring.cloud.version>3.1.1</spring.cloud.version>
+		<java.version>17</java.version>
+		<cassandra.version>4.15.0</cassandra.version>
+		<aws.sdk.version>1.12.472</aws.sdk.version>
+		<springdoc.version>1.7.0</springdoc.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
 		<markdownpagegenerator.version>2.4.0</markdownpagegenerator.version>
-		<rgxgen.version>1.3</rgxgen.version>	
-		<brave-instrumentation-kafka-clients>5.13.10</brave-instrumentation-kafka-clients>		
-		<json-schema-validator>1.0.71</json-schema-validator>
-		<testcontainers.version>1.17.3</testcontainers.version>
+		<rgxgen.version>1.4</rgxgen.version>	
+		<brave-instrumentation-kafka-clients>5.16.0</brave-instrumentation-kafka-clients>		
+		<json-schema-validator>1.0.82</json-schema-validator>
+		<testcontainers.version>1.18.1</testcontainers.version>
 	</properties>
 
 	<dependencies>
@@ -46,29 +44,19 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter</artifactId>
-			<version>${spring.cloud.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-		<!-- sleuth support -->
+		<!-- trace -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-			<version>${spring.cloud.version}</version>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-tracing-bridge-brave</artifactId>
 		</dependency>
-
-		<!-- zipkin support -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
-			<version>${spring.cloud.version}</version>
+			<groupId>io.zipkin.reporter2</groupId>
+			<artifactId>zipkin-reporter-brave</artifactId>
 		</dependency>
 
 		<!-- using AspectJ -->
@@ -166,8 +154,8 @@
 
 		<!-- adapter cassandra -->
 		<dependency>
-			<groupId>com.datastax.cassandra</groupId>
-			<artifactId>cassandra-driver-core</artifactId>
+			<groupId>com.datastax.oss</groupId>
+			<artifactId>java-driver-core</artifactId>
 			<version>${cassandra.version}</version>
 		</dependency>
 
@@ -200,12 +188,11 @@
 		</dependency>
 
 		<!--  testcontainers  -->
-		<dependency>
+		<!--dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
-			<version>${junit-jupiter.version}</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency-->
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>testcontainers</artifactId>
@@ -234,6 +221,14 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<!-- config surefire -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>--add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED</argLine>
 				</configuration>
 			</plugin>
 			<!-- get version and name in application properties -->
@@ -308,20 +303,5 @@
 			</build>
 		</profile>
 	</profiles>
-
-	<repositories>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 </project>
