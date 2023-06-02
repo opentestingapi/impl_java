@@ -317,10 +317,11 @@ docker run -d -p 50000:50000 --name=opentesting --restart=always -m 2g --cpus="2
 |---|---|---|
 |OPENTESTING_APPNAME   |opentesting  |application name   |
 |OPENTESTING_AUTODELETE   |7   |delete checks older than 7 days (targetts)   |
-|OPENTESTING_CHECKCRON   |[ "0 * * * * ?", "10 * * * * ?", "20 * * * * ?", "30 * * * * ?", "40 * * * * ?", "50 * * * * ?"]   |cron for check execution   |
+|OPENTESTING_CHECKCRON   |[ "0 * * * * ?", "30 * * * * ?"]   |cron for check validation maxwaittime   |
+|OPENTESTING_DEFAULTCHECKINTERVAL   |10s   |interval for check validation   |
 |OPENTESTING_DOWNLOADMAXCHECKS   |1000   |maximum allowed download size for checks   |
 |OPENTESTING_LONGRUNNINGWARN   |5   |warning if process takes more than 5 sec   |
-|OPENTESTING_POOLSIZE   |50   |internal thread pool size   |
+|OPENTESTING_POOLSIZE   |500   |internal thread pool size   |
 |OPENTESTING_RELOADTESTCASES   |true   |reload database testcases after container restart   |
 |OPENTESTING_RESTTIMEOUT   |30   |timeout for HTTP(S) request, for example JWT receiver   |
 |OPENTESTING_SALT   |   |instance specific salt for password encryption   |
