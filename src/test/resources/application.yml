@@ -1,7 +1,8 @@
 opentesting:
   appname: opentesting junit
-  poolsize: 50
-  checkcron: [ "0 * * * * ?", "10 * * * * ?", "20 * * * * ?", "30 * * * * ?", "40 * * * * ?", "50 * * * * ?"]
+  poolsize: 500
+  checkcron: [ "0 * * * * ?", "30 * * * * ?" ]
+  defaultcheckinterval: 10s
   longrunningwarn: 5
   downloadmaxchecks: 1000
   resttimeout: 30
