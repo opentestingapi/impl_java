@@ -116,6 +116,7 @@ as this is transferred into subsequent injects and checks.
         "service" : {...},
         "validations": [...],          
         "maxwaittime" : "10m",
+        "intervall" : "10s",
         "mandatory" : false,
         "injects" : [ "inject-rest-2" ],
         "checks" : [ "check-rest-2" ],
