@@ -1,5 +1,6 @@
 | VERSION | API | CHANGELOG                                                                                                                                                    |
 |---------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.34    | 1.2 | Sonar cleanup and additional test cases |
 | 1.33    | 1.2 | new timing logic for checks, new 'intervall' parameter in API 1.2 to define check execution intervall |
 | 1.32    | 1.1 | upgrade SpringDoc (swagger-ui fix) |
 | 1.31    | 1.1 | JDK 17 (new temurin base image), Spring Boot 3.1, library updates, image updates, Cassandra (v4) datacenter property |
