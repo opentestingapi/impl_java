@@ -1,5 +1,6 @@
 | VERSION | API | CHANGELOG                                                                                                                                                    |
 |---------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.35    | 1.3 | API 1.3 introducing 'executions' parameter for injects, Spring Boot 3.1.2, Lib upgrades |
 | 1.34    | 1.2 | Sonar cleanup, additional test cases, CVE Fix CVE-2022-1471 |
 | 1.33    | 1.2 | new timing logic for checks, new 'intervall' parameter in API 1.2 to define check execution intervall |
 | 1.32    | 1.1 | upgrade SpringDoc (swagger-ui fix) |
