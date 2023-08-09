@@ -2,7 +2,7 @@
 
 Reference implementation to upload test cases, create random data and perform tests cron triggered
 
-API: https://opentestingapi.github.io/specification/version-1.2/
+API: https://opentestingapi.github.io/specification/version-1.3/
 
 Container:   https://github.com/opentestingapi/impl_java/pkgs/container/opentesting
 
