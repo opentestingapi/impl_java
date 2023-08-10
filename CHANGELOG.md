@@ -1,5 +1,6 @@
 | VERSION | API | CHANGELOG                                                                                                                                                    |
 |---------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.37    | 1.5 | API 1.5 introducing addition option for data generation, loop blocker inject chaining |
 | 1.36    | 1.4 | API 1.4 to allow inject-inject chaining |
 | 1.35    | 1.3 | API 1.3 introducing 'executions' parameter for injects, Spring Boot 3.1.2, Lib upgrades |
 | 1.34    | 1.2 | Sonar cleanup, additional test cases, CVE Fix CVE-2022-1471 |
