@@ -6,23 +6,23 @@
     "labels" : ["department-myDepartment1", "stage-integration", "team-aTeam"],
     "injections" : [
      {
-        "injectid" : "inject-mq-1",
-        "description" : "my example inject with mq",
+        "injectid" : "inject-kafka-1",
+        "description" : "my example inject with kafka",
         "cron" : [ "* 1 * * * ?", "10 * * * * ?" ],
         "active" : true,
         "service" : {
-          "type": "ibmmq",
+          "type": "kafka",
           "connectstring": "myserver",
           "username": "user",
           "password": "password",
           "custom": [
              {
-                "key": "queuename",
-                "value": "myqueuename"
+                "key": "topicname",
+                "value": "mytopicname"
              }
           ]
         },        
-        "sourcefile" : "source_mq_1.json",
+        "sourcefile" : "source_kafka_1.json",
         "timetolive": "5d",
         "checks" : [ "check-kafka-1", "check-oracle-1" ]
      }, {
@@ -218,7 +218,7 @@
        ],
         "maxwaittime" : "1h",
         "mandatory" : true,
-        "injects" : [ "inject-mq-1" ]
+        "injects" : [ "inject-kafka-1" ]
      }, {
         "checkid" : "check-kafka-2",
         "description" : "my 2nd example check with kafka",
