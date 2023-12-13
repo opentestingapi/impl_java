@@ -1,4 +1,4 @@
-FROM quay.io/strimzi/kafka:latest-kafka-3.3.2
+FROM quay.io/strimzi/kafka:latest-kafka-3.6.1
 
 COPY init /opt/kafka/init
 

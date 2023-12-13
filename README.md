@@ -344,3 +344,13 @@ Swagger:
 Dashboard / Info / Metrics / Log / everything else:
 
 <http://servername:50000/>
+
+
+## Systemtests based on Testcontainers
+
+Please add to your /etc/hosts:
+127.0.0.1       host.testcontainers.internal
+
+```
+./systemtest.sh
+```

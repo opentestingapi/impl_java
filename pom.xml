@@ -5,26 +5,26 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.2</version>
+		<version>3.1.6</version>
 		<relativePath/>
 	</parent>
 	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>1.37</version>
+	<version>1.38</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
 	<properties>
 		<java.version>17</java.version>
 		<cassandra.version>4.17.0</cassandra.version>
-		<aws.sdk.version>1.12.524</aws.sdk.version>
-		<springdoc.version>2.2.0</springdoc.version>
+		<aws.sdk.version>1.12.610</aws.sdk.version>
+		<springdoc.version>2.3.0</springdoc.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
 		<markdownpagegenerator.version>2.4.0</markdownpagegenerator.version>
 		<rgxgen.version>1.4</rgxgen.version>	
 		<brave-instrumentation-kafka-clients>5.16.0</brave-instrumentation-kafka-clients>		
-		<json-schema-validator>1.0.86</json-schema-validator>
-		<testcontainers.version>1.18.3</testcontainers.version>
+		<json-schema-validator>1.0.88</json-schema-validator>
+		<testcontainers.version>1.19.3</testcontainers.version>
 	</properties>
 
 	<dependencies>
@@ -47,14 +47,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<!-- Spring Boot lib upgrades for CVE fixes -->
-		<!-- CVE-2022-1471 -->
-		<dependency>
-			<groupId>org.yaml</groupId>
-			<artifactId>snakeyaml</artifactId>
-			<version>2.0</version>
 		</dependency>
 
 		<!-- trace -->
@@ -196,11 +188,6 @@
 		</dependency>
 
 		<!--  testcontainers  -->
-		<!--dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<scope>test</scope>
-		</dependency-->
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>testcontainers</artifactId>

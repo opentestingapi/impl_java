@@ -1,5 +1,6 @@
 | VERSION | API | CHANGELOG                                                                                                                                                    |
 |---------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.38    | 1.5 | Spring Boot 3.1.6, springdoc 2.3.0, aws-java-sdk-s3 1.12.610, json-schema-validator 1.0.88, testcontainers 1.19.3, quay.io/strimzi/kafka 3.6.1 |
 | 1.37    | 1.5 | API 1.5 introducing addition option for data generation, loop blocker inject chaining |
 | 1.36    | 1.4 | API 1.4 to allow inject-inject chaining |
 | 1.35    | 1.3 | API 1.3 introducing 'executions' parameter for injects, Spring Boot 3.1.2, Lib upgrades |

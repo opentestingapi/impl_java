@@ -1,4 +1,4 @@
-FROM quay.io/strimzi/kafka:latest-kafka-3.4.0
+FROM quay.io/strimzi/kafka:latest-kafka-3.6.1
 
 COPY scripts /opt/kafka/scripts
 
