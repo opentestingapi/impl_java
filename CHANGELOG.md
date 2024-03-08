@@ -1,5 +1,6 @@
 | VERSION | API | CHANGELOG                                                                                                                                                    |
 |---------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.39    | 1.5 | Spring Boot 3.2.3, aws-java-sdk-s3 1.12.674, brave-instrumentation-kafka-clients 6.0.2, testcontainers 1.19.7, quay.io/strimzi/kafka 3.7.0 |
 | 1.38    | 1.5 | Spring Boot 3.1.6, springdoc 2.3.0, aws-java-sdk-s3 1.12.610, json-schema-validator 1.0.88, testcontainers 1.19.3, quay.io/strimzi/kafka 3.6.1 |
 | 1.37    | 1.5 | API 1.5 introducing addition option for data generation, loop blocker inject chaining |
 | 1.36    | 1.4 | API 1.4 to allow inject-inject chaining |

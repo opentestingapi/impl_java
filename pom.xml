@@ -5,26 +5,26 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.6</version>
+		<version>3.2.3</version>
 		<relativePath/>
 	</parent>
 	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>1.38</version>
+	<version>1.39</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
 	<properties>
 		<java.version>17</java.version>
 		<cassandra.version>4.17.0</cassandra.version>
-		<aws.sdk.version>1.12.610</aws.sdk.version>
+		<aws.sdk.version>1.12.674</aws.sdk.version>
 		<springdoc.version>2.3.0</springdoc.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
 		<markdownpagegenerator.version>2.4.0</markdownpagegenerator.version>
 		<rgxgen.version>1.4</rgxgen.version>	
-		<brave-instrumentation-kafka-clients>5.16.0</brave-instrumentation-kafka-clients>		
+		<brave-instrumentation-kafka-clients>6.0.2</brave-instrumentation-kafka-clients>		
 		<json-schema-validator>1.0.88</json-schema-validator>
-		<testcontainers.version>1.19.3</testcontainers.version>
+		<testcontainers.version>1.19.7</testcontainers.version>
 	</properties>
 
 	<dependencies>
