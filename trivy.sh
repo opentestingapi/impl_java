@@ -1,4 +1,4 @@
 #!/bin/bash
 
 #run trivy scanner
-docker run aquasec/trivy image ghcr.io/opentestingapi/opentesting:1.40
+docker run aquasec/trivy image ghcr.io/opentestingapi/opentesting:1.41

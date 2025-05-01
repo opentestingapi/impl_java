@@ -1,5 +1,6 @@
 | VERSION | API | CHANGELOG                                                                                                                                                    |
 |---------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.41    | 1.5 | Spring Boot 3.4.5, aws-java-sdk-s3 1.12.782, cassandra 4.19.0, spring-doc 2.8.6, brave-instrumentation-kafka-clients 6.2.0, testcontainers 1.21.0, quay.io/strimzi/kafka 3.9.0 |
 | 1.40    | 1.5 | JDK 21, Spring Boot 3.3.1, aws-java-sdk-s3 1.12.767, spring-doc 2.6.0, markdownpagegenerator 2.4.2, brave-instrumentation-kafka-clients 6.0.3, json-schema-validator 1.2.0, testcontainers 1.20.1, quay.io/strimzi/kafka 3.8.0 |
 | 1.39    | 1.5 | Spring Boot 3.2.3, aws-java-sdk-s3 1.12.674, brave-instrumentation-kafka-clients 6.0.2, testcontainers 1.19.7, quay.io/strimzi/kafka 3.7.0 |
 | 1.38    | 1.5 | Spring Boot 3.1.6, springdoc 2.3.0, aws-java-sdk-s3 1.12.610, json-schema-validator 1.0.88, testcontainers 1.19.3, quay.io/strimzi/kafka 3.6.1 |
