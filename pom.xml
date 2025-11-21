@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>1.42</version>
+	<version>1.43</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
