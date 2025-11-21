@@ -1,5 +1,6 @@
 | VERSION | API | CHANGELOG                                                                                                                                                    |
 |---------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.43    | 1.5 | Spring Boot 3.5.8, aws-java-sdk-s3 2.39.0, cassandra 4.19.2, spring-doc 2.8.14, brave-instrumentation-kafka-clients 6.3.0, testcontainers 2.0.2, quay.io/strimzi/kafka 4.1.1, https://github.com/opentestingapi/impl_java/issues/11 |
 | 1.42    | 1.5 | add inject result to inject instance, add inject success counter to bulkexecution result (can be used for testcontainer executions, https://github.com/opentestingapi/backlog/issues/20) |
 | 1.41    | 1.5 | Spring Boot 3.4.5, aws-java-sdk-s3 1.12.782, cassandra 4.19.0, spring-doc 2.8.6, brave-instrumentation-kafka-clients 6.2.0, testcontainers 1.21.0, quay.io/strimzi/kafka 3.9.0 |
 | 1.40    | 1.5 | JDK 21, Spring Boot 3.3.1, aws-java-sdk-s3 1.12.767, spring-doc 2.6.0, markdownpagegenerator 2.4.2, brave-instrumentation-kafka-clients 6.0.3, json-schema-validator 1.2.0, testcontainers 1.20.1, quay.io/strimzi/kafka 3.8.0 |
