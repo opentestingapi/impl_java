@@ -5,26 +5,27 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.5</version>
+		<version>3.5.8</version>
 		<relativePath/>
 	</parent>
 	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>1.41</version>
+	<version>1.42</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
 	<properties>
 		<java.version>21</java.version>
-		<cassandra.version>4.19.0</cassandra.version>
-		<aws.sdk.version>1.12.782</aws.sdk.version>
-		<springdoc.version>2.8.6</springdoc.version>
+		<cassandra.version>4.19.2</cassandra.version>
+		<aws.sdk.version>2.39.0</aws.sdk.version>
+		<springdoc.version>2.8.14</springdoc.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
 		<markdownpagegenerator.version>2.4.2</markdownpagegenerator.version>
 		<rgxgen.version>1.4</rgxgen.version><!-- higher versions break the system -->
-		<brave-instrumentation-kafka-clients>6.2.0</brave-instrumentation-kafka-clients>		
+		<brave-instrumentation-kafka-clients>6.3.0</brave-instrumentation-kafka-clients>		
 		<json-schema-validator>1.2.0</json-schema-validator><!-- higher versions break the system -->
-		<testcontainers.version>1.21.0</testcontainers.version>
+		<testcontainers.version>2.0.2</testcontainers.version>
+		<junit.version>4.13.2</junit.version>
 	</properties>
 
 	<dependencies>
@@ -168,8 +169,8 @@
 
 		<!-- adapter S3 -->
 		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>aws-java-sdk-s3</artifactId>
+			<groupId>software.amazon.awssdk</groupId>
+    		<artifactId>s3</artifactId>
 			<version>${aws.sdk.version}</version>
 		</dependency>
 
@@ -194,10 +195,12 @@
 			<version>${testcontainers.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!--  JUnit  -->
 		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>${testcontainers.version}</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 

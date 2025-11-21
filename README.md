@@ -261,7 +261,7 @@ Local development environment could be started running a simple Java main method
 https://github.com/opentestingapi/impl_java/tree/master/src/test/java/org/opentesting/devenv#development-environment
 
 
-### Build (JDK 17)
+### Build (JDK 21)
 
 Local build:
 
