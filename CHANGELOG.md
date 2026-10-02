@@ -1,6 +1,6 @@
 | VERSION | API | CHANGELOG                                                                                                                                                    |
 |---------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1.45    | 1.6 | JDK 25, Spring Boot 4.1.1, aws-java-sdk-s3 2.55.10, cassandra 4.19.3, spring-doc 3.1.1, testcontainers 2.0.5, markdown-page-generator 2.5.2, brave-instrumentation-kafka-clients 6.3.1 |
+| 1.45    | 1.6 | JDK 25, Spring Boot 4.1.1, aws-java-sdk-s3 2.55.10, cassandra 4.19.3, spring-doc 3.1.1, testcontainers 2.0.5, markdown-page-generator 2.5.2, brave-instrumentation-kafka-clients 6.3.1, quay.io/strimzi/kafka 4.3.1, rgxgen 3.1 |
 | 1.44    | 1.6 | new replacement option 'conversion' |
 | 1.43    | 1.5 | Spring Boot 3.5.8, aws-java-sdk-s3 2.39.0, cassandra 4.19.2, spring-doc 2.8.14, brave-instrumentation-kafka-clients 6.3.0, testcontainers 2.0.2, quay.io/strimzi/kafka 4.1.1, https://github.com/opentestingapi/impl_java/issues/11 |
 | 1.42    | 1.5 | add inject result to inject instance, add inject success counter to bulkexecution result (can be used for testcontainer executions, https://github.com/opentestingapi/backlog/issues/20) |
