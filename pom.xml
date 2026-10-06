@@ -5,26 +5,26 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.8</version>
+		<version>4.1.1</version>
 		<relativePath/>
 	</parent>
 	<groupId>org.opentesting</groupId>
 	<artifactId>impl_java</artifactId>
-	<version>1.44</version>
+	<version>1.45</version>
 	<name>impl_java</name>
 	<description>open testing implementation spring boot</description>
 
 	<properties>
-		<java.version>21</java.version>
-		<cassandra.version>4.19.2</cassandra.version>
-		<aws.sdk.version>2.39.0</aws.sdk.version>
-		<springdoc.version>2.8.14</springdoc.version>
+		<java.version>25</java.version>
+		<cassandra.version>4.19.3</cassandra.version>
+		<aws.sdk.version>2.55.10</aws.sdk.version>
+		<springdoc.version>3.1.1</springdoc.version>
 		<cache2k.version>2.6.1.Final</cache2k.version>
-		<markdownpagegenerator.version>2.4.2</markdownpagegenerator.version>
-		<rgxgen.version>1.4</rgxgen.version><!-- higher versions break the system -->
-		<brave-instrumentation-kafka-clients>6.3.0</brave-instrumentation-kafka-clients>		
+		<markdownpagegenerator.version>2.5.2</markdownpagegenerator.version>
+		<rgxgen.version>3.1</rgxgen.version><!-- whitespace definition is set in RandomData to keep the behaviour of previous versions -->
+		<brave-instrumentation-kafka-clients>6.3.1</brave-instrumentation-kafka-clients>		
 		<json-schema-validator>1.2.0</json-schema-validator><!-- higher versions break the system -->
-		<testcontainers.version>2.0.2</testcontainers.version>
+		<testcontainers.version>2.0.5</testcontainers.version>
 		<junit.version>4.13.2</junit.version>
 	</properties>
 
@@ -52,12 +52,8 @@
 
 		<!-- trace -->
 		<dependency>
-			<groupId>io.micrometer</groupId>
-			<artifactId>micrometer-tracing-bridge-brave</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.zipkin.reporter2</groupId>
-			<artifactId>zipkin-reporter-brave</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-zipkin</artifactId>
 		</dependency>
 
 		<!-- using AspectJ -->
@@ -71,6 +67,12 @@
 			<groupId>io.netty</groupId>
 			<artifactId>netty-transport-native-epoll</artifactId>			
 			<classifier>linux-x86_64</classifier>
+		</dependency>
+
+		<!-- cassandra autoconfigure (separate module since Spring Boot 4) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-cassandra</artifactId>
 		</dependency>
 
 		<!-- internal database support -->
@@ -209,6 +211,16 @@
 	<build>
 		<finalName>impl_java</finalName>
 		<plugins>
+			<!-- annotation processing (lombok) is disabled by default since JDK 23 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<compilerArgs>
+						<arg>-proc:full</arg>
+					</compilerArgs>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
